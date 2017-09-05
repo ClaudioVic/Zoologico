@@ -29,5 +29,4 @@ public class Corredor {
 	public List<Jaula> getJaulas(){
 		return this.jaulas;
 	}
-	
 }

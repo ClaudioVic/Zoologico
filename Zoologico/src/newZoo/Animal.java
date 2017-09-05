@@ -35,4 +35,5 @@ public class Animal {
 	public void setDataEntrada(String dataEntrada) {
 		this.dataEntrada = dataEntrada;
 	}
+	
 }
