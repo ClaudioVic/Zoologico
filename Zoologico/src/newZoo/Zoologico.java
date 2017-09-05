@@ -14,50 +14,25 @@ public class Zoologico {
 		this.endereco = endereco;
 		this.blocos = new ArrayList<Bloco>();
 	}
-	
-	public List<String> pesquisarLocalDoAnimal(String nome){
-		List<String> local = new ArrayList<String>();
-		String corredor = "";
-		for(Bloco b: blocos){
-			List<Corredor> corredores = b.getCorredores();
-			for(Corredor c : corredores){
-				Animal animalPesquisado = c.pesquisarAnimal(nome);
-				if(animalPesquisado.getNome().equals(nome)){
-					local.add(b.getLetra());
-					corredor += c.getNumero();
-					local.add(corredor);
-					
-					return local;
-				}
-			}
-		}
-		return null;
+	public String getNome() {
+		return nome;
 	}
-	
-	public List<Animal> pesquisarAnimaisDoBloco(String bloco){
-		List<Animal> animaisDoBloco = new ArrayList<Animal>();
-		
-		Bloco blocoPesquisado = pesquisarBloco(bloco);
-		List<Corredor> corredores = blocoPesquisado.getCorredores();
-		for(Corredor c: corredores){
-			List<Animal> animaisDoCorredor = blocoPesquisado.pesquisarAnimaisDoCorredor(c.getNumero());
-			for(Animal a: animaisDoCorredor){
-				animaisDoBloco.add(a);
-			}
-		}
-		return animaisDoBloco;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
-	public Bloco pesquisarBloco(String bloco){
-		for(Bloco b: blocos){
-			if(b.getLetra().equals(bloco)){
-				return b;
-			}
-		}
-		return null;
+	public String getEndereco() {
+		return endereco;
 	}
-	
-	public void cadastrarBloco(Bloco bloco){
-		this.blocos.add(bloco);
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	public List<Bloco> getBlocos() {
+		return blocos;
+	}
+	public void setBlocos(List<Bloco> blocos) {
+		this.blocos = blocos;
+	}
+	public Zoologico(){
+		this("","");
 	}
 }

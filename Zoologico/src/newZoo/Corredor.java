@@ -7,32 +7,27 @@ import java.util.List;
 public class Corredor {
 	
 	private int numero;
-	private List<Animal> animais;
+	private List<Jaula> jaulas;
 	
 	public Corredor (int numero){
 		this.numero = numero;
-		this.animais = new ArrayList<Animal>();
+		this.jaulas = new ArrayList<>();
+	}
+	
+	public Corredor(){
+		this(0);
 	}
 	
 	public int getNumero(){
 		return this.numero;
 	}
 	
-	public List<Animal> getAnimais(){
-		return this.animais;
-	}
-
-	public void cadastrarAnimal(Animal animal){
-		this.animais.add(animal);
+	public void setNumero(int numero){
+		this.numero = numero;
 	}
 	
-	public Animal pesquisarAnimal(String animal){
-		for(Animal a: animais){
-			if(a.getNome().equals(animal)){
-				return a;
-			}
-		}
-		return null;
+	public List<Jaula> getJaulas(){
+		return this.jaulas;
 	}
 	
 }
