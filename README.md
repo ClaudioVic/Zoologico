@@ -1,4 +1,4 @@
-# Zoologico
+# Zoológico
 
 Programa de gerenciamento de Zoológico, auxilia a administração e gerenciamento de animais, celas e funcionários. Algumas funcionalidade do sistema:
 * Gerenciamento de Funcionarios (Cadastro, Alteração, Modificação)
