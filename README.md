@@ -16,3 +16,6 @@ Programa de gerenciamento de Zoológico, auxilia a administração e gerenciamen
 
 * [Robson Alves](https://github.com/robsonalvz)
 * [Claudio Vicor](https://github.com/ClaudioVic)
+
+##Trello
+* https://trello.com/b/rHWITRuw/zoologico
