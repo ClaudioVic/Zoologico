@@ -1,8 +1,6 @@
 package newZoo;
 
 public class Animal {
-	
-	
 	private String nome;
 	private String especie;
 	private String dataEntrada; 
