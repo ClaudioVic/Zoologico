@@ -5,7 +5,7 @@ public class Animal {
 	private String especie;
 	private String dataEntrada; 
 	private String observacao;
-	
+
 	public Animal(String nome, String especie, String dataEntrada, String obs){
 		this.nome = nome;
 		this.especie = especie; 
