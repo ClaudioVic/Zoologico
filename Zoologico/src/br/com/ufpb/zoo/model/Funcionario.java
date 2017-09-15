@@ -1,4 +1,4 @@
-package newZoo;
+package br.com.ufpb.zoo.model;
 
 public class Funcionario extends Pessoa{
 	private String funcao;

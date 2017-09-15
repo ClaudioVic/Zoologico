@@ -1,4 +1,4 @@
-package newZoo;
+package br.com.ufpb.zoo.model;
 
 import java.util.ArrayList;
 import java.util.List;

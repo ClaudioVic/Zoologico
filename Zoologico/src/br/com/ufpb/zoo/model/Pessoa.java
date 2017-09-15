@@ -1,4 +1,4 @@
-package newZoo;
+package br.com.ufpb.zoo.model;
 
 public abstract class Pessoa {
 	private String nome;
