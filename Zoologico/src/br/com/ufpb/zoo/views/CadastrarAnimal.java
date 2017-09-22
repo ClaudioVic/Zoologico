@@ -8,6 +8,9 @@ package br.com.ufpb.zoo.views;
 
 import br.com.ufpb.zoo.model.Animal;
 import br.com.ufpb.zoo.run.Projeto;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -21,6 +24,11 @@ public class CadastrarAnimal extends javax.swing.JDialog {
     public CadastrarAnimal(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+        URL url = this.getClass().getResource("images/ZooIcone.png");
+        Image ZooIcone = Toolkit.getDefaultToolkit().getImage(url);
+        this.setIconImage(ZooIcone);
+        setIconImage(ZooIcone);
     }
 
     /** This method is called from within the constructor to
@@ -43,6 +51,7 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Nome:");
 
@@ -60,6 +69,7 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         });
 
         btnOk.setText("Cadastrar");
+        btnOk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnOk.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnOkMouseClicked(evt);
