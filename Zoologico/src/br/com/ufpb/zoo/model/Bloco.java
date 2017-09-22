@@ -3,18 +3,13 @@ package br.com.ufpb.zoo.model;
 public class Bloco {
 	
 	private String nome;
-	private String responsavel;
-	//
-	public Bloco(String nome, String responsavel){
+	private Funcionario responsavel;
+
+        
+	public Bloco(String nome, Funcionario responsavel){
 		this.nome = nome;
 		this.responsavel = responsavel;
-	}
-	
-	
-	public Bloco(){
-		this("","");
-	}
-	
+	}	
 	public String getNome(){
 		return this.nome;
 	}
@@ -23,11 +18,11 @@ public class Bloco {
 		this.nome = nome;
 	}
 	
-	public String getResponsavel(){
+	public Funcionario getResponsavel(){
 		return this.responsavel;
 	}
 	
-	public void setResponsavel(String responsavel){
+	public void setResponsavel(Funcionario responsavel){
 		this.responsavel = responsavel;
 	}
 	

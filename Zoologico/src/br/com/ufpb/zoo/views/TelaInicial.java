@@ -53,7 +53,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenuItem11.setText("jMenuItem11");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jImagemZoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ufpb/zoo/images/Zoo_1.png"))); // NOI18N
         jImagemZoo.setText("jLabel1");
@@ -61,21 +61,26 @@ public class TelaInicial extends javax.swing.JFrame {
         jImagemZoo.setMinimumSize(new java.awt.Dimension(800, 500));
 
         jCadastro.setText("Cadastro");
-        jCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jFuncionario.setText("Funcionário");
-        jFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jCadastro.add(jFuncionario);
 
         jAnimal.setText("Animal");
-        jAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAnimalActionPerformed(evt);
+            }
+        });
         jCadastro.add(jAnimal);
 
         jBlocoSub.setText("Bloco");
-        jBlocoSub.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBlocoSub.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jCooredorSubBloco.setText("Corredor");
-        jCooredorSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCooredorSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jCooredorSubBloco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCooredorSubBlocoActionPerformed(evt);
@@ -84,15 +89,15 @@ public class TelaInicial extends javax.swing.JFrame {
         jBlocoSub.add(jCooredorSubBloco);
 
         jJaulaSubBloco.setText("Jaula");
-        jJaulaSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jJaulaSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBlocoSub.add(jJaulaSubBloco);
 
         jResponsavelSubBloco.setText("Responsável");
-        jResponsavelSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jResponsavelSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBlocoSub.add(jResponsavelSubBloco);
 
         fFuncionariosSubBloco.setText("Funcionários");
-        fFuncionariosSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fFuncionariosSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBlocoSub.add(fFuncionariosSubBloco);
 
         jCadastro.add(jBlocoSub);
@@ -101,14 +106,14 @@ public class TelaInicial extends javax.swing.JFrame {
         jCadastro.getAccessibleContext().setAccessibleDescription("");
 
         JPesquisa.setText("Pesquisa");
-        JPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPesquisaAnimal.setText("Animal");
-        jPesquisaAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPesquisaAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLocal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jLocal.setText("Local de um animal");
-        jLocal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLocal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLocal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jLocalActionPerformed(evt);
@@ -118,12 +123,12 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jBloco.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jBloco.setText("Animais do bloco");
-        jBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPesquisaAnimal.add(jBloco);
 
         jCorredor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jCorredor.setText("Animais do corredor");
-        jCorredor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCorredor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPesquisaAnimal.add(jCorredor);
 
         JPesquisa.add(jPesquisaAnimal);
@@ -132,21 +137,21 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jVisaoGeral.setText("Visão Geral");
         jVisaoGeral.setActionCommand("");
-        jVisaoGeral.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jVisaoGeral.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jTodosOsFuncionarios.setText("Todos os Funcionários");
         jVisaoGeral.add(jTodosOsFuncionarios);
 
         jTodosOsBlocos.setText("Todos os blocos");
-        jTodosOsBlocos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTodosOsBlocos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jVisaoGeral.add(jTodosOsBlocos);
 
         jTodosOsCorredores.setText("Todos os corredores");
-        jTodosOsCorredores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTodosOsCorredores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jVisaoGeral.add(jTodosOsCorredores);
 
         jTodasAsJaulas.setText("Todos as jaulas");
-        jTodasAsJaulas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTodasAsJaulas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTodasAsJaulas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTodasAsJaulasActionPerformed(evt);
@@ -155,7 +160,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jVisaoGeral.add(jTodasAsJaulas);
 
         jTodosOsAnimais.setText("Todos os animais");
-        jTodosOsAnimais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTodosOsAnimais.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jVisaoGeral.add(jTodosOsAnimais);
 
         jBarraDeMenu.add(jVisaoGeral);
@@ -187,6 +192,13 @@ public class TelaInicial extends javax.swing.JFrame {
     private void jTodasAsJaulasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTodasAsJaulasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTodasAsJaulasActionPerformed
+
+    private void jAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAnimalActionPerformed
+        // TODO add your handling code here:
+        CadastrarAnimal ca = new CadastrarAnimal(this, rootPaneCheckingEnabled);
+        ca.setLocationRelativeTo(null);
+        ca.setVisible(true);
+    }//GEN-LAST:event_jAnimalActionPerformed
 
     /**
      * @param args the command line arguments
