@@ -98,6 +98,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jCadastro.add(jBlocoSub);
 
         jBarraDeMenu.add(jCadastro);
+        jCadastro.getAccessibleContext().setAccessibleDescription("");
 
         JPesquisa.setText("Pesquisa");
         JPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
