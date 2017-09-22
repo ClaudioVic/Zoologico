@@ -65,6 +65,11 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jFuncionario.setText("Funcionário");
         jFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFuncionarioActionPerformed(evt);
+            }
+        });
         jCadastro.add(jFuncionario);
 
         jAnimal.setText("Animal");
@@ -199,6 +204,10 @@ public class TelaInicial extends javax.swing.JFrame {
         ca.setLocationRelativeTo(null);
         ca.setVisible(true);
     }//GEN-LAST:event_jAnimalActionPerformed
+
+    private void jFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
