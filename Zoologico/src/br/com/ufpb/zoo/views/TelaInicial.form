@@ -13,7 +13,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastro"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Padr&#xe3;o"/>
+              <Color id="Cursor em Forma de M&#xe3;o"/>
             </Property>
           </Properties>
           <AccessibilityProperties>
@@ -24,7 +24,7 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Funcion&#xe1;rio"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Padr&#xe3;o"/>
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
                 </Property>
               </Properties>
               <Events>
@@ -35,7 +35,7 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Animal"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Padr&#xe3;o"/>
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
                 </Property>
               </Properties>
               <Events>
@@ -54,7 +54,7 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Corredor"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Padr&#xe3;o"/>
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -65,7 +65,7 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Jaula"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Padr&#xe3;o"/>
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
                     </Property>
                   </Properties>
                 </MenuItem>
@@ -73,7 +73,7 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Respons&#xe1;vel"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Padr&#xe3;o"/>
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
                     </Property>
                   </Properties>
                 </MenuItem>
@@ -81,7 +81,7 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Funcion&#xe1;rios"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Padr&#xe3;o"/>
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
                     </Property>
                   </Properties>
                 </MenuItem>
@@ -93,7 +93,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Pesquisa"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Padr&#xe3;o"/>
+              <Color id="Cursor em Forma de M&#xe3;o"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -112,7 +112,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Local de um animal"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Padr&#xe3;o"/>
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -126,7 +126,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Animais do bloco"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Padr&#xe3;o"/>
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
                     </Property>
                   </Properties>
                 </MenuItem>
@@ -137,7 +137,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Animais do corredor"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor Padr&#xe3;o"/>
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
                     </Property>
                   </Properties>
                 </MenuItem>
@@ -150,20 +150,23 @@
             <Property name="text" type="java.lang.String" value="Vis&#xe3;o Geral"/>
             <Property name="actionCommand" type="java.lang.String" value=""/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Padr&#xe3;o"/>
+              <Color id="Cursor em Forma de M&#xe3;o"/>
             </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jTodosOsFuncionarios">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Todos os Funcion&#xe1;rios"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jTodosOsBlocos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Todos os blocos"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Padr&#xe3;o"/>
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
                 </Property>
               </Properties>
             </MenuItem>
@@ -171,7 +174,7 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Todos os corredores"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Padr&#xe3;o"/>
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
                 </Property>
               </Properties>
             </MenuItem>
@@ -179,7 +182,7 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Todos as jaulas"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Padr&#xe3;o"/>
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
                 </Property>
               </Properties>
               <Events>
@@ -190,7 +193,7 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Todos os animais"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Padr&#xe3;o"/>
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
                 </Property>
               </Properties>
             </MenuItem>
@@ -204,6 +207,7 @@
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
       <Color id="Cursor Padr&#xe3;o"/>
     </Property>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jBarraDeMenu"/>
@@ -238,7 +242,7 @@
     <Component class="javax.swing.JLabel" name="jImagemZoo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/com/ufpb/zoo/images/Zoo_1.png"/>
+          <Image iconType="3" name="/br/com/ufpb/zoo/views/images/Zoo_1.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
