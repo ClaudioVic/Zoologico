@@ -28,164 +28,164 @@ public class TelaInicial extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem11 = new javax.swing.JMenuItem();
-        jLabel1 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem15 = new javax.swing.JMenuItem();
+        jImagemZoo = new javax.swing.JLabel();
+        jBarraDeMenu = new javax.swing.JMenuBar();
+        jCadastro = new javax.swing.JMenu();
+        jFuncionario = new javax.swing.JMenuItem();
+        jAnimal = new javax.swing.JMenuItem();
+        jBlocoSub = new javax.swing.JMenu();
+        jCooredorSubBloco = new javax.swing.JMenuItem();
+        jJaulaSubBloco = new javax.swing.JMenuItem();
+        jResponsavelSubBloco = new javax.swing.JMenuItem();
+        fFuncionariosSubBloco = new javax.swing.JMenuItem();
+        JPesquisa = new javax.swing.JMenu();
+        jPesquisaAnimal = new javax.swing.JMenu();
+        jLocal = new javax.swing.JMenuItem();
+        jBloco = new javax.swing.JMenuItem();
+        jCorredor = new javax.swing.JMenuItem();
+        jVisaoGeral = new javax.swing.JMenu();
+        jTodosOsFuncionarios = new javax.swing.JMenuItem();
+        jTodosOsBlocos = new javax.swing.JMenuItem();
+        jTodosOsCorredores = new javax.swing.JMenuItem();
+        jTodasAsJaulas = new javax.swing.JMenuItem();
+        jTodosOsAnimais = new javax.swing.JMenuItem();
 
         jMenuItem11.setText("jMenuItem11");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ufpb/zoo/images/Zoo_1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jLabel1.setMaximumSize(new java.awt.Dimension(800, 500));
-        jLabel1.setMinimumSize(new java.awt.Dimension(800, 500));
+        jImagemZoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ufpb/zoo/images/Zoo_1.png"))); // NOI18N
+        jImagemZoo.setText("jLabel1");
+        jImagemZoo.setMaximumSize(new java.awt.Dimension(800, 500));
+        jImagemZoo.setMinimumSize(new java.awt.Dimension(800, 500));
 
-        jMenu1.setText("Cadastro");
-        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCadastro.setText("Cadastro");
+        jCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jMenuItem5.setText("Funcionário");
-        jMenuItem5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu1.add(jMenuItem5);
+        jFuncionario.setText("Funcionário");
+        jFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCadastro.add(jFuncionario);
 
-        jMenuItem1.setText("Animal");
-        jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu1.add(jMenuItem1);
+        jAnimal.setText("Animal");
+        jAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCadastro.add(jAnimal);
 
-        jMenu4.setText("Bloco");
-        jMenu4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBlocoSub.setText("Bloco");
+        jBlocoSub.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jMenuItem3.setText("Corredor");
-        jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jCooredorSubBloco.setText("Corredor");
+        jCooredorSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCooredorSubBloco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jCooredorSubBlocoActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem3);
+        jBlocoSub.add(jCooredorSubBloco);
 
-        jMenuItem4.setText("Jaula");
-        jMenuItem4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu4.add(jMenuItem4);
+        jJaulaSubBloco.setText("Jaula");
+        jJaulaSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBlocoSub.add(jJaulaSubBloco);
 
-        jMenuItem13.setText("Responsável");
-        jMenuItem13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu4.add(jMenuItem13);
+        jResponsavelSubBloco.setText("Responsável");
+        jResponsavelSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBlocoSub.add(jResponsavelSubBloco);
 
-        jMenuItem14.setText("Funcionários");
-        jMenuItem14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu4.add(jMenuItem14);
+        fFuncionariosSubBloco.setText("Funcionários");
+        fFuncionariosSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBlocoSub.add(fFuncionariosSubBloco);
 
-        jMenu1.add(jMenu4);
+        jCadastro.add(jBlocoSub);
 
-        jMenuBar1.add(jMenu1);
+        jBarraDeMenu.add(jCadastro);
 
-        jMenu2.setText("Pesquisa");
-        jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JPesquisa.setText("Pesquisa");
+        JPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jMenu5.setText("Animal");
-        jMenu5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPesquisaAnimal.setText("Animal");
+        jPesquisaAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Local de um animal");
-        jMenuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jLocal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jLocal.setText("Local de um animal");
+        jLocal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLocal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                jLocalActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem2);
+        jPesquisaAnimal.add(jLocal);
 
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem6.setText("Animais do bloco");
-        jMenuItem6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu5.add(jMenuItem6);
+        jBloco.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jBloco.setText("Animais do bloco");
+        jBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPesquisaAnimal.add(jBloco);
 
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem7.setText("Animais do corredor");
-        jMenuItem7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu5.add(jMenuItem7);
+        jCorredor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jCorredor.setText("Animais do corredor");
+        jCorredor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPesquisaAnimal.add(jCorredor);
 
-        jMenu2.add(jMenu5);
+        JPesquisa.add(jPesquisaAnimal);
 
-        jMenuBar1.add(jMenu2);
+        jBarraDeMenu.add(JPesquisa);
 
-        jMenu3.setText("Visão Geral");
-        jMenu3.setActionCommand("");
-        jMenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jVisaoGeral.setText("Visão Geral");
+        jVisaoGeral.setActionCommand("");
+        jVisaoGeral.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jMenuItem8.setText("Todos os blocos");
-        jMenuItem8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu3.add(jMenuItem8);
+        jTodosOsFuncionarios.setText("Todos os Funcionários");
+        jVisaoGeral.add(jTodosOsFuncionarios);
 
-        jMenuItem10.setText("Todos os corredores");
-        jMenuItem10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu3.add(jMenuItem10);
+        jTodosOsBlocos.setText("Todos os blocos");
+        jTodosOsBlocos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jVisaoGeral.add(jTodosOsBlocos);
 
-        jMenuItem9.setText("Todos as jaulas");
-        jMenuItem9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        jTodosOsCorredores.setText("Todos os corredores");
+        jTodosOsCorredores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jVisaoGeral.add(jTodosOsCorredores);
+
+        jTodasAsJaulas.setText("Todos as jaulas");
+        jTodasAsJaulas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTodasAsJaulas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                jTodasAsJaulasActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem9);
+        jVisaoGeral.add(jTodasAsJaulas);
 
-        jMenuItem12.setText("Todos os animais");
-        jMenuItem12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu3.add(jMenuItem12);
+        jTodosOsAnimais.setText("Todos os animais");
+        jTodosOsAnimais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jVisaoGeral.add(jTodosOsAnimais);
 
-        jMenuItem15.setText("Todos os Funcionários");
-        jMenu3.add(jMenuItem15);
+        jBarraDeMenu.add(jVisaoGeral);
 
-        jMenuBar1.add(jMenu3);
-
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jBarraDeMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jImagemZoo, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jImagemZoo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void jCooredorSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCooredorSubBlocoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_jCooredorSubBlocoActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void jLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLocalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_jLocalActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+    private void jTodasAsJaulasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTodasAsJaulasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
+    }//GEN-LAST:event_jTodasAsJaulasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,27 +223,27 @@ public class TelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenu JPesquisa;
+    private javax.swing.JMenuItem fFuncionariosSubBloco;
+    private javax.swing.JMenuItem jAnimal;
+    private javax.swing.JMenuBar jBarraDeMenu;
+    private javax.swing.JMenuItem jBloco;
+    private javax.swing.JMenu jBlocoSub;
+    private javax.swing.JMenu jCadastro;
+    private javax.swing.JMenuItem jCooredorSubBloco;
+    private javax.swing.JMenuItem jCorredor;
+    private javax.swing.JMenuItem jFuncionario;
+    private javax.swing.JLabel jImagemZoo;
+    private javax.swing.JMenuItem jJaulaSubBloco;
+    private javax.swing.JMenuItem jLocal;
     private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenu jPesquisaAnimal;
+    private javax.swing.JMenuItem jResponsavelSubBloco;
+    private javax.swing.JMenuItem jTodasAsJaulas;
+    private javax.swing.JMenuItem jTodosOsAnimais;
+    private javax.swing.JMenuItem jTodosOsBlocos;
+    private javax.swing.JMenuItem jTodosOsCorredores;
+    private javax.swing.JMenuItem jTodosOsFuncionarios;
+    private javax.swing.JMenu jVisaoGeral;
     // End of variables declaration//GEN-END:variables
 }
