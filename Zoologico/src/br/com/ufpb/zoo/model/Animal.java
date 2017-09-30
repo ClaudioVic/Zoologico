@@ -10,7 +10,7 @@ public class Animal {
 		this.nome = nome;
 		this.especie = especie; 
 		this.dataEntrada = dataEntrada;
-		this.setObservacao(obs);
+		this.observacao=obs;
 	}
 	
 	public String getNome(){
@@ -44,5 +44,10 @@ public class Animal {
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
 	}
+
+    @Override
+    public String toString() {
+        return this.nome+this.especie;
+    }
 	
 }

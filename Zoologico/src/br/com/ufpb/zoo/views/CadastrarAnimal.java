@@ -144,7 +144,7 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         Date dataEntrada = new Date();
         String data = dataEntrada.toString();
         Animal animal = new Animal(nome, especie, data, obs);
-        Projeto.sistema.adicionaAnimal(animal);
+       // Projeto.sistema.adicionaAnimal(animal);
         JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
         dispose();
     }//GEN-LAST:event_btnOkMouseClicked

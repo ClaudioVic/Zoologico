@@ -2,19 +2,26 @@ package br.com.ufpb.zoo.model;
 
 public abstract class Pessoa {
 	private String nome;
+        private String email;
 	private String cpf;
 	private String rg;
 	private String telefone;
 	private Endereco endereco;
 	
-	public Pessoa(String nome, String cpf, String rg, String telefone, Endereco endereco) {
+	public Pessoa(String nome, String email,String cpf, String rg, String telefone, Endereco endereco) {
+                this.email = email;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.rg = rg;
 		this.telefone = telefone;
 		this.endereco = endereco;
 	}
-	
+	public String getEmail(){
+            return this.email;
+        }
+        public void setEmail(String email){
+            this.email=email;
+        }
 	public Endereco getEndereco() {
 		return endereco;
 	}
