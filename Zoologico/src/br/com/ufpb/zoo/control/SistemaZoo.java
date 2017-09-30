@@ -1,14 +1,15 @@
 package br.com.ufpb.zoo.control;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 import br.com.ufpb.zoo.exceptions.AnimalJaExistenteException;
 import br.com.ufpb.zoo.exceptions.AnimalNaoExisteException;
 import br.com.ufpb.zoo.exceptions.FuncionarioJaExistenteException;
 import br.com.ufpb.zoo.exceptions.FuncionarioNaoExisteException;
 import br.com.ufpb.zoo.model.Animal;
 import br.com.ufpb.zoo.model.Funcionario;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class SistemaZoo {
 
@@ -21,8 +22,8 @@ public class SistemaZoo {
     }
 
     public void adicionaAnimal(Animal m) throws AnimalJaExistenteException {
-        Animal a = animais.get(m.toString());
-        if (a != null) {
+        Animal a = this.animais.get(m.toString());
+        if (a == null) {
             animais.put(m.toString(), m);
         } else {
             throw new AnimalJaExistenteException("O animal já está cadastrado!");
@@ -31,19 +32,19 @@ public class SistemaZoo {
 
     public void adicionaFuncionario(Funcionario f) throws FuncionarioJaExistenteException {
         Funcionario fun = funcionarios.get(f.getEmail());
-        if (fun != null) {
+        if (fun == null) {
             funcionarios.put(f.getEmail(), f);
         } else {
             throw new FuncionarioJaExistenteException("O funcionario já esta cadastrado!");
         }
     }
 
-    public List<Funcionario> getAllFuncionarios() {
-        return (List) this.funcionarios.values();
+    public Collection<Funcionario> getAllFuncionarios() {
+        return this.funcionarios.values();
     }
 
-    public List<Animal> getAllAnimais() {
-        return (List) this.animais.values();
+    public Collection<Animal> getAllAnimais() {
+        return  this.animais.values();
     }
 
     public Funcionario pesquisaFuncionario(String email) throws FuncionarioNaoExisteException {

@@ -11,7 +11,12 @@ package br.com.ufpb.zoo.exceptions;
  */
 public class AnimalJaExistenteException extends Exception{
     
-    public AnimalJaExistenteException(String msg){
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public AnimalJaExistenteException(String msg){
         super(msg);
     }
     

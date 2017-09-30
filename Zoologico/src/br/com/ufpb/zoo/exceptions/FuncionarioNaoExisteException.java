@@ -12,7 +12,12 @@ package br.com.ufpb.zoo.exceptions;
 public class FuncionarioNaoExisteException extends Exception{
     
     
-    public FuncionarioNaoExisteException(String msg){
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public FuncionarioNaoExisteException(String msg){
         super(msg); 
     }
     

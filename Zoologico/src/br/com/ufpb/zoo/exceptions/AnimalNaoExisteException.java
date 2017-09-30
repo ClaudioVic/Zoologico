@@ -11,7 +11,12 @@ package br.com.ufpb.zoo.exceptions;
  */
 public class AnimalNaoExisteException extends Exception{
     
-    public AnimalNaoExisteException(String msg){
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public AnimalNaoExisteException(String msg){
         super(msg);
     }
     
