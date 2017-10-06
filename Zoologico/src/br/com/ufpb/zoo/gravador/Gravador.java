@@ -13,6 +13,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
 
+
 /**
  *
  * @author robson
@@ -40,6 +41,7 @@ public class Gravador<T> {
             }
         }
     }
+    
     public List<T> ler() throws IOException{
         ObjectInputStream in = null;
         try{
