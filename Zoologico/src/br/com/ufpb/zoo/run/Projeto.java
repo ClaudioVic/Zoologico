@@ -17,6 +17,7 @@ public class Projeto {
     
     
     public static void main(String[] args){
+        
         TelaInicial tela = new TelaInicial();
         tela.setLocationRelativeTo(null);
         tela.setVisible(true);

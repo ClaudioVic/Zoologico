@@ -5,10 +5,49 @@
  */
 package br.com.ufpb.zoo.control;
 
+import br.com.ufpb.zoo.exceptions.AnimalJaExistenteException;
+import br.com.ufpb.zoo.exceptions.AnimalNaoExisteException;
+import br.com.ufpb.zoo.model.Animal;
+import java.util.Collection;
+import java.util.Map;
+
 /**
  *
  * @author robson
  */
 public class GerenteAnimal {
-    
+
+    private Map<String, Animal> animais;
+
+    public void cadastrarAnimal(Animal m) throws AnimalJaExistenteException {
+        Animal a = this.animais.get(m.toString());
+        if (a == null) {
+            animais.put(m.toString(), m);
+        } else {
+            throw new AnimalJaExistenteException("O animal já está cadastrado!");
+        }
+
+    }
+
+    public Collection<Animal> getAllAnimais() {
+        return this.animais.values();
+    }
+
+    public Animal pesquisaAnimal(String nome, String especie) throws AnimalNaoExisteException {
+        Animal m = animais.get(nome + especie);
+        if (m != null) {
+            return m;
+        } else {
+            throw new AnimalNaoExisteException("O animal não existe");
+        }
+    }
+
+    public void deletarAnimal(Animal m) throws AnimalNaoExisteException {
+        Animal an = this.animais.get(m.toString());
+        if (an != null) {
+            this.animais.remove(m.toString());
+        } else {
+            throw new AnimalNaoExisteException("O animal não foi encontrado!");
+        }
+    }
 }
