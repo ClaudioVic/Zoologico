@@ -1,10 +1,10 @@
 package br.com.ufpb.zoo.model;
 
-public class Jaula {
+public class Ambiente {
 	private int QTD_MAX_ANIMAIS;
 	private String especie;
 	
-	public Jaula(int qTD_MAX_ANIMAIS, String especie) {
+	public Ambiente(int qTD_MAX_ANIMAIS, String especie) {
 		QTD_MAX_ANIMAIS = qTD_MAX_ANIMAIS;
 		this.especie = especie;
 	}

@@ -21,7 +21,7 @@ public class SistemaZoo {
         this.funcionarios = new HashMap<String, Funcionario>();
     }
 
-    public void adicionaAnimal(Animal m) throws AnimalJaExistenteException {
+    public void cadastrarAnimal(Animal m) throws AnimalJaExistenteException {
         Animal a = this.animais.get(m.toString());
         if (a == null) {
             animais.put(m.toString(), m);
@@ -30,12 +30,12 @@ public class SistemaZoo {
         }
     }
 
-    public void adicionaFuncionario(Funcionario f) throws FuncionarioJaExistenteException {
+    public void cadastrarFuncionario(Funcionario f) throws FuncionarioJaExistenteException {
         Funcionario fun = funcionarios.get(f.getEmail());
-        if (fun == null) {
-            funcionarios.put(f.getEmail(), f);
+        if (funcionarios.get(fun) != null) {
+            throw new FuncionarioJaExistenteException("O funcionário já esta cadastrado!");
         } else {
-            throw new FuncionarioJaExistenteException("O funcionario já esta cadastrado!");
+            funcionarios.put(f.getEmail(), f);
         }
     }
 

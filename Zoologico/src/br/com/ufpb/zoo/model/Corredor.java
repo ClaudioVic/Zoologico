@@ -6,27 +6,27 @@ import java.util.List;
 
 public class Corredor {
 	
-	private int numero;
-	private List<Jaula> jaulas;
+	private String nome;
+	private List<Ambiente> jaulas;
 	
-	public Corredor (int numero){
-		this.numero = numero;
+	public Corredor (String numero){
+		this.nome = numero;
 		this.jaulas = new ArrayList<>();
 	}
 	
 	public Corredor(){
-		this(0);
+		this("");
 	}
 	
-	public int getNumero(){
-		return this.numero;
+	public String getNumero(){
+		return this.nome;
 	}
 	
-	public void setNumero(int numero){
-		this.numero = numero;
+	public void setNumero(String numero){
+		this.nome = numero;
 	}
 	
-	public List<Jaula> getJaulas(){
+	public List<Ambiente> getJaulas(){
 		return this.jaulas;
 	}
 }

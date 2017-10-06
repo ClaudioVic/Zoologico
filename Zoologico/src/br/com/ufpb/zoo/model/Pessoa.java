@@ -8,6 +8,15 @@ public abstract class Pessoa {
 	private String telefone;
 	private Endereco endereco;
 	
+        public Pessoa(){
+            this.email = "";
+            this.nome = "";
+            this.cpf = "";
+            this.rg = "";
+            this.telefone = "";
+            this.endereco = new Endereco();
+        }
+        
 	public Pessoa(String nome, String email,String cpf, String rg, String telefone, Endereco endereco) {
                 this.email = email;
 		this.nome = nome;

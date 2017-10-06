@@ -11,7 +11,6 @@ import br.com.ufpb.zoo.run.Projeto;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
-import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,10 +18,10 @@ import javax.swing.JOptionPane;
  * @author robson
  * @author Claudio Victor
  */
-public class CadastrarAnimal extends javax.swing.JDialog {
+public class PesquisarLocalDeUmAnimal extends javax.swing.JDialog {
 
     /** Creates new form CadastrarAnimal */
-    public CadastrarAnimal(java.awt.Frame parent, boolean modal) {
+    public PesquisarLocalDeUmAnimal(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         
@@ -41,29 +40,22 @@ public class CadastrarAnimal extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCadastrarAnimal = new javax.swing.JLabel();
+        jPesquisarAnimal = new javax.swing.JLabel();
         jNome = new javax.swing.JLabel();
-        jEspecie = new javax.swing.JLabel();
-        jObservacao = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
+        jEspecie = new javax.swing.JLabel();
         txtEspecie = new javax.swing.JTextField();
-        btnCadastrarAnimal = new javax.swing.JButton();
-        txtObsCadastrar = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        btnPesquisarAnimal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jCadastrarAnimal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jCadastrarAnimal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jCadastrarAnimal.setText("   Cadastrar Animal   ");
-        jCadastrarAnimal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPesquisarAnimal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPesquisarAnimal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPesquisarAnimal.setText("   Pesquisar Animal   ");
+        jPesquisarAnimal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jNome.setText("Nome:");
-
-        jEspecie.setText("Especie:");
-
-        jObservacao.setText("Observações:");
 
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,67 +63,56 @@ public class CadastrarAnimal extends javax.swing.JDialog {
             }
         });
 
+        jEspecie.setText("Especie:");
+
         txtEspecie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEspecieActionPerformed(evt);
             }
         });
 
-        btnCadastrarAnimal.setText("Cadastrar");
-        btnCadastrarAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCadastrarAnimal.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnPesquisarAnimal.setText("Pesquisar");
+        btnPesquisarAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPesquisarAnimal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCadastrarAnimalMouseClicked(evt);
+                btnPesquisarAnimalMouseClicked(evt);
             }
         });
-        btnCadastrarAnimal.addActionListener(new java.awt.event.ActionListener() {
+        btnPesquisarAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarAnimalActionPerformed(evt);
+                btnPesquisarAnimalActionPerformed(evt);
             }
         });
-
-        txtObsCadastrar.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        txtObsCadastrar.setToolTipText("");
-        txtObsCadastrar.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        txtObsCadastrar.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jNome)
+                    .addComponent(jEspecie))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                    .addComponent(txtEspecie))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtObsCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jObservacao)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jNome)
-                                    .addComponent(jEspecie))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
-                                    .addComponent(txtEspecie)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jCadastrarAnimal)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(31, 31, 31))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnCadastrarAnimal)
-                .addGap(153, 153, 153))
+                .addContainerGap(112, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnPesquisarAnimal)
+                        .addGap(157, 157, 157))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPesquisarAnimal)
+                        .addGap(97, 97, 97))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jCadastrarAnimal)
+                .addComponent(jPesquisarAnimal)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jNome)
@@ -140,12 +121,8 @@ public class CadastrarAnimal extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jEspecie))
-                .addGap(34, 34, 34)
-                .addComponent(jObservacao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtObsCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnCadastrarAnimal)
+                .addComponent(btnPesquisarAnimal)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -156,22 +133,16 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEspecieActionPerformed
 
-    private void btnCadastrarAnimalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarAnimalMouseClicked
+    private void btnPesquisarAnimalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPesquisarAnimalMouseClicked
         // TODO add your handling code here:
         String nome = txtNome.getText();
         String especie = txtEspecie.getText();
-        String obs = txtObsCadastrar.toString();
-        Date dataEntrada = new Date();
-        String data = dataEntrada.toString();
-        Animal animal = new Animal(nome, especie, data, obs);
-       // Projeto.sistema.cadastrarAnimal(animal);
-        JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
-        dispose();
-    }//GEN-LAST:event_btnCadastrarAnimalMouseClicked
+        
+    }//GEN-LAST:event_btnPesquisarAnimalMouseClicked
 
-    private void btnCadastrarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarAnimalActionPerformed
+    private void btnPesquisarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarAnimalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCadastrarAnimalActionPerformed
+    }//GEN-LAST:event_btnPesquisarAnimalActionPerformed
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
         // TODO add your handling code here:
@@ -194,20 +165,21 @@ public class CadastrarAnimal extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastrarAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PesquisarLocalDeUmAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastrarAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PesquisarLocalDeUmAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastrarAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PesquisarLocalDeUmAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastrarAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PesquisarLocalDeUmAnimal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastrarAnimal dialog = new CadastrarAnimal(new javax.swing.JFrame(), true);
+                PesquisarLocalDeUmAnimal dialog = new PesquisarLocalDeUmAnimal(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -220,15 +192,12 @@ public class CadastrarAnimal extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCadastrarAnimal;
-    private javax.swing.JLabel jCadastrarAnimal;
+    private javax.swing.JButton btnPesquisarAnimal;
     private javax.swing.JLabel jEspecie;
     private javax.swing.JLabel jNome;
-    private javax.swing.JLabel jObservacao;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel jPesquisarAnimal;
     private javax.swing.JTextField txtEspecie;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JScrollPane txtObsCadastrar;
     // End of variables declaration//GEN-END:variables
 
 }

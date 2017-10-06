@@ -36,30 +36,26 @@ public class TelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuItem11 = new javax.swing.JMenuItem();
         jImagemZoo = new javax.swing.JLabel();
         jBarraDeMenu = new javax.swing.JMenuBar();
         jCadastro = new javax.swing.JMenu();
         jFuncionario = new javax.swing.JMenuItem();
         jAnimal = new javax.swing.JMenuItem();
         jBlocoSub = new javax.swing.JMenu();
-        jCooredorSubBloco = new javax.swing.JMenuItem();
-        jJaulaSubBloco = new javax.swing.JMenuItem();
-        jResponsavelSubBloco = new javax.swing.JMenuItem();
-        fFuncionariosSubBloco = new javax.swing.JMenuItem();
+        fBlocoSubBloco = new javax.swing.JMenuItem();
+        jCorredorSubBloco = new javax.swing.JMenuItem();
+        jAmbienteSubBloco = new javax.swing.JMenuItem();
         JPesquisa = new javax.swing.JMenu();
         jPesquisaAnimal = new javax.swing.JMenu();
-        jLocal = new javax.swing.JMenuItem();
-        jBloco = new javax.swing.JMenuItem();
-        jCorredor = new javax.swing.JMenuItem();
+        jPesquisaLocal = new javax.swing.JMenuItem();
+        jPesquisaBloco = new javax.swing.JMenuItem();
+        jPesquisaCorredor = new javax.swing.JMenuItem();
         jVisaoGeral = new javax.swing.JMenu();
         jTodosOsFuncionarios = new javax.swing.JMenuItem();
         jTodosOsBlocos = new javax.swing.JMenuItem();
         jTodosOsCorredores = new javax.swing.JMenuItem();
-        jTodasAsJaulas = new javax.swing.JMenuItem();
+        jTodosOsAmbientes = new javax.swing.JMenuItem();
         jTodosOsAnimais = new javax.swing.JMenuItem();
-
-        jMenuItem11.setText("jMenuItem11");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -94,26 +90,32 @@ public class TelaInicial extends javax.swing.JFrame {
         jBlocoSub.setText("Bloco");
         jBlocoSub.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jCooredorSubBloco.setText("Corredor");
-        jCooredorSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jCooredorSubBloco.addActionListener(new java.awt.event.ActionListener() {
+        fBlocoSubBloco.setText("Bloco");
+        fBlocoSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fBlocoSubBloco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCooredorSubBlocoActionPerformed(evt);
+                fBlocoSubBlocoActionPerformed(evt);
             }
         });
-        jBlocoSub.add(jCooredorSubBloco);
+        jBlocoSub.add(fBlocoSubBloco);
 
-        jJaulaSubBloco.setText("Jaula");
-        jJaulaSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBlocoSub.add(jJaulaSubBloco);
+        jCorredorSubBloco.setText("Corredor");
+        jCorredorSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCorredorSubBloco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCorredorSubBlocoActionPerformed(evt);
+            }
+        });
+        jBlocoSub.add(jCorredorSubBloco);
 
-        jResponsavelSubBloco.setText("Responsável");
-        jResponsavelSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBlocoSub.add(jResponsavelSubBloco);
-
-        fFuncionariosSubBloco.setText("Funcionários");
-        fFuncionariosSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBlocoSub.add(fFuncionariosSubBloco);
+        jAmbienteSubBloco.setText("Ambiente");
+        jAmbienteSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jAmbienteSubBloco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAmbienteSubBlocoActionPerformed(evt);
+            }
+        });
+        jBlocoSub.add(jAmbienteSubBloco);
 
         jCadastro.add(jBlocoSub);
 
@@ -126,25 +128,35 @@ public class TelaInicial extends javax.swing.JFrame {
         jPesquisaAnimal.setText("Animal");
         jPesquisaAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLocal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jLocal.setText("Local de um animal");
-        jLocal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLocal.addActionListener(new java.awt.event.ActionListener() {
+        jPesquisaLocal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jPesquisaLocal.setText("Local de um animal");
+        jPesquisaLocal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPesquisaLocal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jLocalActionPerformed(evt);
+                jPesquisaLocalActionPerformed(evt);
             }
         });
-        jPesquisaAnimal.add(jLocal);
+        jPesquisaAnimal.add(jPesquisaLocal);
 
-        jBloco.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jBloco.setText("Animais do bloco");
-        jBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPesquisaAnimal.add(jBloco);
+        jPesquisaBloco.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jPesquisaBloco.setText("Animais do bloco");
+        jPesquisaBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPesquisaBloco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPesquisaBlocoActionPerformed(evt);
+            }
+        });
+        jPesquisaAnimal.add(jPesquisaBloco);
 
-        jCorredor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jCorredor.setText("Animais do corredor");
-        jCorredor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPesquisaAnimal.add(jCorredor);
+        jPesquisaCorredor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jPesquisaCorredor.setText("Animais do corredor");
+        jPesquisaCorredor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPesquisaCorredor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPesquisaCorredorActionPerformed(evt);
+            }
+        });
+        jPesquisaAnimal.add(jPesquisaCorredor);
 
         JPesquisa.add(jPesquisaAnimal);
 
@@ -154,7 +166,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jVisaoGeral.setActionCommand("");
         jVisaoGeral.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jTodosOsFuncionarios.setText("Todos os Funcionários");
+        jTodosOsFuncionarios.setText("Todos os funcionários");
         jTodosOsFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jVisaoGeral.add(jTodosOsFuncionarios);
 
@@ -166,14 +178,14 @@ public class TelaInicial extends javax.swing.JFrame {
         jTodosOsCorredores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jVisaoGeral.add(jTodosOsCorredores);
 
-        jTodasAsJaulas.setText("Todos as jaulas");
-        jTodasAsJaulas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTodasAsJaulas.addActionListener(new java.awt.event.ActionListener() {
+        jTodosOsAmbientes.setText("Todos os ambientes");
+        jTodosOsAmbientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTodosOsAmbientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTodasAsJaulasActionPerformed(evt);
+                jTodosOsAmbientesActionPerformed(evt);
             }
         });
-        jVisaoGeral.add(jTodasAsJaulas);
+        jVisaoGeral.add(jTodosOsAmbientes);
 
         jTodosOsAnimais.setText("Todos os animais");
         jTodosOsAnimais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -197,17 +209,21 @@ public class TelaInicial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCooredorSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCooredorSubBlocoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCooredorSubBlocoActionPerformed
+    private void jCorredorSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCorredorSubBlocoActionPerformed
+        CadastrarCorredor cc = new CadastrarCorredor(this, rootPaneCheckingEnabled);
+        cc.setLocationRelativeTo(null);
+        cc.setVisible(true);
+    }//GEN-LAST:event_jCorredorSubBlocoActionPerformed
 
-    private void jLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLocalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLocalActionPerformed
+    private void jPesquisaLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPesquisaLocalActionPerformed
+        PesquisarLocalDeUmAnimal pla = new PesquisarLocalDeUmAnimal(this, rootPaneCheckingEnabled);
+        pla.setLocationRelativeTo(null);
+        pla.setVisible(true);
+    }//GEN-LAST:event_jPesquisaLocalActionPerformed
 
-    private void jTodasAsJaulasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTodasAsJaulasActionPerformed
+    private void jTodosOsAmbientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTodosOsAmbientesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTodasAsJaulasActionPerformed
+    }//GEN-LAST:event_jTodosOsAmbientesActionPerformed
 
     private void jAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAnimalActionPerformed
         // TODO add your handling code here:
@@ -218,7 +234,34 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void jFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFuncionarioActionPerformed
         // TODO add your handling code here:
+        CadastrarFuncionario cf = new CadastrarFuncionario(this, rootPaneCheckingEnabled);
+        cf.setLocationRelativeTo(null);
+        cf.setVisible(true);
     }//GEN-LAST:event_jFuncionarioActionPerformed
+
+    private void fBlocoSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fBlocoSubBlocoActionPerformed
+        CadastrarBloco cb = new CadastrarBloco(this, rootPaneCheckingEnabled);
+        cb.setLocationRelativeTo(null);
+        cb.setVisible(true);
+    }//GEN-LAST:event_fBlocoSubBlocoActionPerformed
+
+    private void jAmbienteSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAmbienteSubBlocoActionPerformed
+        CadastrarAmbiente cam = new CadastrarAmbiente(this, rootPaneCheckingEnabled);
+        cam.setLocationRelativeTo(null);
+        cam.setVisible(true);
+    }//GEN-LAST:event_jAmbienteSubBlocoActionPerformed
+
+    private void jPesquisaBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPesquisaBlocoActionPerformed
+        PesquisarAnimaisDoBloco pab = new PesquisarAnimaisDoBloco(this, rootPaneCheckingEnabled);
+        pab.setLocationRelativeTo(null);
+        pab.setVisible(true);
+    }//GEN-LAST:event_jPesquisaBlocoActionPerformed
+
+    private void jPesquisaCorredorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPesquisaCorredorActionPerformed
+        PesquisarAnimaisDoCorredor pac = new PesquisarAnimaisDoCorredor(this, rootPaneCheckingEnabled);
+        pac.setLocationRelativeTo(null);
+        pac.setVisible(true);
+    }//GEN-LAST:event_jPesquisaCorredorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,22 +300,20 @@ public class TelaInicial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JPesquisa;
-    private javax.swing.JMenuItem fFuncionariosSubBloco;
+    private javax.swing.JMenuItem fBlocoSubBloco;
+    private javax.swing.JMenuItem jAmbienteSubBloco;
     private javax.swing.JMenuItem jAnimal;
     private javax.swing.JMenuBar jBarraDeMenu;
-    private javax.swing.JMenuItem jBloco;
     private javax.swing.JMenu jBlocoSub;
     private javax.swing.JMenu jCadastro;
-    private javax.swing.JMenuItem jCooredorSubBloco;
-    private javax.swing.JMenuItem jCorredor;
+    private javax.swing.JMenuItem jCorredorSubBloco;
     private javax.swing.JMenuItem jFuncionario;
     private javax.swing.JLabel jImagemZoo;
-    private javax.swing.JMenuItem jJaulaSubBloco;
-    private javax.swing.JMenuItem jLocal;
-    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenu jPesquisaAnimal;
-    private javax.swing.JMenuItem jResponsavelSubBloco;
-    private javax.swing.JMenuItem jTodasAsJaulas;
+    private javax.swing.JMenuItem jPesquisaBloco;
+    private javax.swing.JMenuItem jPesquisaCorredor;
+    private javax.swing.JMenuItem jPesquisaLocal;
+    private javax.swing.JMenuItem jTodosOsAmbientes;
     private javax.swing.JMenuItem jTodosOsAnimais;
     private javax.swing.JMenuItem jTodosOsBlocos;
     private javax.swing.JMenuItem jTodosOsCorredores;
