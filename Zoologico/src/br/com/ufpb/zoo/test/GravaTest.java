@@ -1,8 +1,9 @@
 package br.com.ufpb.zoo.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -20,6 +21,12 @@ public class GravaTest {
 			sistema.cadastrarAnimal(animal);
 		} catch (AnimalJaExistenteException | IOException e) {
 			e.printStackTrace();
+		}
+	     try {
+			List<Animal> lista = sistema.getAllAnimais();
+			System.out.println(lista.get(0).getNome());
+		} catch (IOException e) {
+			fail();
 		}
 	}
 

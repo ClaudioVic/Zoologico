@@ -1,4 +1,4 @@
-package br.com.ufpb.zoo.test;
+/*package br.com.ufpb.zoo.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -15,21 +15,21 @@ import br.com.ufpb.zoo.model.Funcionario;
 public class ZooTest {
     @Test
     public void test() {
-    	/*
+    	
     	 * 
     	 * Teste de cadastro
     	 * 
-    	 * */
+    	 * 
         SistemaZoo sistema = new SistemaZoo();
         Animal animal = new Animal("cachorro", "Canis lupus", "18/03/2010", "teste");
         Endereco end = new Endereco("rua aride", "55900", "BA", "rT", "12", "casa");
         Funcionario f = new Funcionario("joao", "joao@", "123123", "123123", "99545622", end, "alimentador", "....");
-        /*try {
+        try {
           //  sistema.cadastrarAnimal(animal);
         } catch (AnimalJaExistenteException ex) {
             fail();
             ex.printStackTrace();
-        }*/
+        }
         try {
 			sistema.cadastrarFuncionario(f);
 		} catch (FuncionarioJaExistenteException e) {
@@ -39,25 +39,26 @@ public class ZooTest {
         //
         //Cadastrar o mesmo animal , test
         //
-       /* try {
+        try {
 			sistema.cadastrarAnimal(animal);
 			fail();
 		} catch (AnimalJaExistenteException e) {
 			System.err.println(e.getMessage());
-		}*/
+		}
         try {
 			sistema.cadastrarFuncionario(f);
 			fail();
 		} catch (FuncionarioJaExistenteException e) {
 			System.err.println(e.getMessage());
 		}
-        /*
+        
          * 
          * Verificação das listas
          * 
-         * */ 
+         *  
         assertEquals(sistema.getAllAnimais().size(),1);
         assertEquals(sistema.getAllFuncionarios().size(),1);
         
     }
 }
+*/

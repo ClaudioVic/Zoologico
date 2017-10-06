@@ -2,6 +2,7 @@ package br.com.ufpb.zoo.control;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.List;
 
 import br.com.ufpb.zoo.exceptions.AnimalJaExistenteException;
 import br.com.ufpb.zoo.exceptions.AnimalNaoExisteException;
@@ -30,7 +31,7 @@ public class SistemaZoo {
         gerenteAnimal.cadastrarAnimal(m);
     }
 
-    public Collection<Animal> getAllAnimais() {
+    public List<Animal> getAllAnimais() throws IOException {
         return gerenteAnimal.getAllAnimais();
     }
 

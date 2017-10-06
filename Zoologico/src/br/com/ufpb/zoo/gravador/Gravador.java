@@ -52,7 +52,7 @@ public class Gravador<T> {
         }catch(IOException e){
             throw e;
         }catch(ClassNotFoundException e){
-            throw new IOException("Classe dos objetos gravados no arquivo"+this.nomeDoArquivo+" não existe");
+            throw new IOException("Classe dos objetos gravados no arquivo "+this.nomeDoArquivo+" não existe");
         }finally{
             if (in!=null){
                 in.close();

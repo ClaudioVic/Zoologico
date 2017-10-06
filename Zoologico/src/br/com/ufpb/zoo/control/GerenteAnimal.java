@@ -7,8 +7,8 @@ package br.com.ufpb.zoo.control;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import br.com.ufpb.zoo.exceptions.AnimalJaExistenteException;
@@ -41,8 +41,8 @@ public class GerenteAnimal {
     }
 
     
-    public Collection<Animal> getAllAnimais() {
-        return this.animais.values();
+    public List<Animal> getAllAnimais() throws IOException {
+        return this.gravador.ler();
     }
 
     public Animal pesquisaAnimal(String nome, String especie) throws AnimalNaoExisteException {
