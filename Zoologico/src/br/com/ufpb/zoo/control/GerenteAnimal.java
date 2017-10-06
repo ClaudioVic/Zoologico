@@ -5,13 +5,16 @@
  */
 package br.com.ufpb.zoo.control;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 import br.com.ufpb.zoo.exceptions.AnimalJaExistenteException;
 import br.com.ufpb.zoo.exceptions.AnimalNaoExisteException;
 import br.com.ufpb.zoo.gravador.Gravador;
 import br.com.ufpb.zoo.model.Animal;
-import java.io.IOException;
-import java.util.Collection;
-import java.util.Map;
 
 /**
  *
@@ -24,6 +27,7 @@ public class GerenteAnimal {
     
     public GerenteAnimal(){
         this.gravador = new Gravador<Animal>("animais.dat");
+        this.animais = new HashMap<String,Animal>();
     }
     public void cadastrarAnimal(Animal m) throws AnimalJaExistenteException, IOException {
         Animal a = this.animais.get(m.toString());
@@ -33,7 +37,7 @@ public class GerenteAnimal {
             throw new AnimalJaExistenteException("O animal já está cadastrado!");
         }
         //
-        this.gravador.gravaAnimal(animais.values());
+        this.gravador.gravar(new ArrayList(this.animais.values()));
     }
 
     public Collection<Animal> getAllAnimais() {

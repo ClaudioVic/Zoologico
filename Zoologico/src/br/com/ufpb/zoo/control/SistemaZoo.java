@@ -1,5 +1,6 @@
 package br.com.ufpb.zoo.control;
 
+import java.io.IOException;
 import java.util.Collection;
 
 import br.com.ufpb.zoo.exceptions.AnimalJaExistenteException;
@@ -21,9 +22,10 @@ public class SistemaZoo {
 
     /**
      * Modulo Animais
+     * @throws IOException 
      *
      */
-    public void cadastrarAnimal(Animal m) throws AnimalJaExistenteException {
+    public void cadastrarAnimal(Animal m) throws AnimalJaExistenteException, IOException {
         gerenteAnimal.cadastrarAnimal(m);
     }
 

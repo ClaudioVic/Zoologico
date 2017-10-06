@@ -24,12 +24,12 @@ public class ZooTest {
         Animal animal = new Animal("cachorro", "Canis lupus", "18/03/2010", "teste");
         Endereco end = new Endereco("rua aride", "55900", "BA", "rT", "12", "casa");
         Funcionario f = new Funcionario("joao", "joao@", "123123", "123123", "99545622", end, "alimentador", "....");
-        try {
-            sistema.cadastrarAnimal(animal);
+        /*try {
+          //  sistema.cadastrarAnimal(animal);
         } catch (AnimalJaExistenteException ex) {
             fail();
             ex.printStackTrace();
-        }
+        }*/
         try {
 			sistema.cadastrarFuncionario(f);
 		} catch (FuncionarioJaExistenteException e) {
@@ -39,12 +39,12 @@ public class ZooTest {
         //
         //Cadastrar o mesmo animal , test
         //
-        try {
+       /* try {
 			sistema.cadastrarAnimal(animal);
 			fail();
 		} catch (AnimalJaExistenteException e) {
 			System.err.println(e.getMessage());
-		}
+		}*/
         try {
 			sistema.cadastrarFuncionario(f);
 			fail();
