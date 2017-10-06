@@ -40,6 +40,7 @@ public class GerenteAnimal {
         this.gravador.gravar(new ArrayList(this.animais.values()));
     }
 
+    
     public Collection<Animal> getAllAnimais() {
         return this.animais.values();
     }
