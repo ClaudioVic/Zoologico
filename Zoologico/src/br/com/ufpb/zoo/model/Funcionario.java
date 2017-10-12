@@ -1,6 +1,8 @@
 package br.com.ufpb.zoo.model;
 
-public class Funcionario extends Pessoa{
+import java.io.Serializable;
+
+public class Funcionario extends Pessoa implements Serializable{
 	private String funcao;
 	private String observacao;
         

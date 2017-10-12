@@ -22,12 +22,10 @@ public class GravaTest {
 		} catch (AnimalJaExistenteException | IOException e) {
 			e.printStackTrace();
 		}
-	     try {
+	   
 			List<Animal> lista = sistema.getAllAnimais();
 			System.out.println(lista.get(0).getNome());
-		} catch (IOException e) {
-			fail();
-		}
+		
 	}
 
 }

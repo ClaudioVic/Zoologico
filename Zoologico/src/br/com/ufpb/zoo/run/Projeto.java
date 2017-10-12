@@ -13,12 +13,12 @@ import br.com.ufpb.zoo.views.TelaInicial;
  * @author robson
  */
 public class Projeto {
-    public static SistemaZoo sistema = new SistemaZoo();
+    
     
     
     public static void main(String[] args){
-        
-        TelaInicial tela = new TelaInicial();
+        SistemaZoo sistema = new SistemaZoo();
+        TelaInicial tela = new TelaInicial(sistema);
         tela.setLocationRelativeTo(null);
         tela.setVisible(true);
     }

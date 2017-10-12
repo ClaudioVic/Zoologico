@@ -5,11 +5,11 @@ import java.io.Serializable;
 public class Animal implements Serializable {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
-	private String nome;
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    private String nome;
     private String especie;
     private String dataEntrada;
     private String observacao;

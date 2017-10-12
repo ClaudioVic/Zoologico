@@ -19,14 +19,14 @@ import br.com.ufpb.zoo.exceptions.FuncionarioJaExistenteException;
  */
 public class CadastrarFuncionario extends javax.swing.JDialog {
     
-    SistemaZoo sisZoo = new SistemaZoo();
+    private static SistemaZoo sisZoo = new SistemaZoo();
     /**
      * Creates new form CadastrarFuncionario
      */
-    public CadastrarFuncionario(java.awt.Frame parent, boolean modal) {
+    public CadastrarFuncionario(SistemaZoo sisZoo,java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+        this.sisZoo = sisZoo;
         URL url = this.getClass().getResource("images/ZooIcone.png");
         Image ZooIcone = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(ZooIcone);
@@ -413,7 +413,7 @@ public class CadastrarFuncionario extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastrarFuncionario dialog = new CadastrarFuncionario(new javax.swing.JFrame(), true);
+                CadastrarFuncionario dialog = new CadastrarFuncionario(sisZoo,new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

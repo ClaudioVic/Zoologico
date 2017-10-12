@@ -24,25 +24,23 @@ public class GerenteAnimal {
 
     private Map<String, Animal> animais;
     private Gravador<Animal> gravador;
-    
-    public GerenteAnimal(){
+
+    public GerenteAnimal() {
         this.gravador = new Gravador<Animal>("animais.dat");
-        this.animais = new HashMap<String,Animal>();
+        this.animais = new HashMap<String, Animal>();
     }
+
     public void cadastrarAnimal(Animal m) throws AnimalJaExistenteException, IOException {
         Animal a = this.animais.get(m.toString());
         if (a == null) {
             animais.put(m.toString(), m);
         } else {
-            throw new AnimalJaExistenteException("O animal já está cadastrado!");
+            throw new AnimalJaExistenteException("O animal informado já está cadastrado!");
         }
-        //
-        this.gravador.gravar(new ArrayList(this.animais.values()));
     }
 
-    
-    public List<Animal> getAllAnimais() throws IOException {
-        return this.gravador.ler();
+    public List<Animal> getAllAnimais() {
+        return new ArrayList(this.animais.values());
     }
 
     public Animal pesquisaAnimal(String nome, String especie) throws AnimalNaoExisteException {
@@ -50,7 +48,7 @@ public class GerenteAnimal {
         if (m != null) {
             return m;
         } else {
-            throw new AnimalNaoExisteException("O animal não existe");
+            throw new AnimalNaoExisteException("O animal informado não existe");
         }
     }
 
@@ -59,7 +57,14 @@ public class GerenteAnimal {
         if (an != null) {
             this.animais.remove(m.toString());
         } else {
-            throw new AnimalNaoExisteException("O animal não foi encontrado!");
+            throw new AnimalNaoExisteException("O animal informado não foi encontrado!");
         }
+    }
+    // Arquivos
+    public void salvarAnimais() throws IOException {
+        this.gravador.gravar(new ArrayList(this.animais.values()));
+    }
+    public List<Animal> recuperarAnimais() throws IOException{
+        return this.gravador.ler();
     }
 }

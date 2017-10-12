@@ -5,6 +5,7 @@
  */
 package br.com.ufpb.zoo.views;
 
+import br.com.ufpb.zoo.control.SistemaZoo;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
@@ -15,13 +16,16 @@ import java.net.URL;
  */
 public class TelaInicial extends javax.swing.JFrame {
 
+    private static SistemaZoo sistema;
+
     /**
      * Creates new form TelaInicial
      */
-    public TelaInicial() {
+    public TelaInicial(SistemaZoo sistema) {
+        this.sistema = sistema;
         initComponents();
-        
-        URL url = this.getClass().getResource("images/ZooIcone.png");
+
+        URL url = this.getClass().getResource("./././././images/ZooIcone.png");
         Image ZooIcone = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(ZooIcone);
         setIconImage(ZooIcone);
@@ -67,10 +71,10 @@ public class TelaInicial extends javax.swing.JFrame {
         jImagemZoo.setMinimumSize(new java.awt.Dimension(800, 500));
 
         jCadastro.setText("Cadastro");
-        jCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jFuncionario.setText("Funcionário");
-        jFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFuncionarioActionPerformed(evt);
@@ -79,7 +83,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jCadastro.add(jFuncionario);
 
         jAnimal.setText("Animal");
-        jAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAnimalActionPerformed(evt);
@@ -91,7 +95,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jBlocoSub.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         fBlocoSubBloco.setText("Bloco");
-        fBlocoSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fBlocoSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         fBlocoSubBloco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fBlocoSubBlocoActionPerformed(evt);
@@ -100,7 +104,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jBlocoSub.add(fBlocoSubBloco);
 
         jCorredorSubBloco.setText("Corredor");
-        jCorredorSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCorredorSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jCorredorSubBloco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCorredorSubBlocoActionPerformed(evt);
@@ -109,7 +113,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jBlocoSub.add(jCorredorSubBloco);
 
         jAmbienteSubBloco.setText("Ambiente");
-        jAmbienteSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jAmbienteSubBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jAmbienteSubBloco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAmbienteSubBlocoActionPerformed(evt);
@@ -123,14 +127,14 @@ public class TelaInicial extends javax.swing.JFrame {
         jCadastro.getAccessibleContext().setAccessibleDescription("");
 
         JPesquisa.setText("Pesquisa");
-        JPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JPesquisa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPesquisaAnimal.setText("Animal");
         jPesquisaAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPesquisaLocal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jPesquisaLocal.setText("Local de um animal");
-        jPesquisaLocal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPesquisaLocal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPesquisaLocal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPesquisaLocalActionPerformed(evt);
@@ -140,7 +144,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jPesquisaBloco.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jPesquisaBloco.setText("Animais do bloco");
-        jPesquisaBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPesquisaBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPesquisaBloco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPesquisaBlocoActionPerformed(evt);
@@ -150,7 +154,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jPesquisaCorredor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jPesquisaCorredor.setText("Animais do corredor");
-        jPesquisaCorredor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPesquisaCorredor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPesquisaCorredor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPesquisaCorredorActionPerformed(evt);
@@ -164,22 +168,27 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jVisaoGeral.setText("Visão Geral");
         jVisaoGeral.setActionCommand("");
-        jVisaoGeral.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jVisaoGeral.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jTodosOsFuncionarios.setText("Todos os funcionários");
-        jTodosOsFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTodosOsFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTodosOsFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTodosOsFuncionariosActionPerformed(evt);
+            }
+        });
         jVisaoGeral.add(jTodosOsFuncionarios);
 
         jTodosOsBlocos.setText("Todos os blocos");
-        jTodosOsBlocos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTodosOsBlocos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jVisaoGeral.add(jTodosOsBlocos);
 
         jTodosOsCorredores.setText("Todos os corredores");
-        jTodosOsCorredores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTodosOsCorredores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jVisaoGeral.add(jTodosOsCorredores);
 
         jTodosOsAmbientes.setText("Todos os ambientes");
-        jTodosOsAmbientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTodosOsAmbientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTodosOsAmbientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTodosOsAmbientesActionPerformed(evt);
@@ -188,7 +197,12 @@ public class TelaInicial extends javax.swing.JFrame {
         jVisaoGeral.add(jTodosOsAmbientes);
 
         jTodosOsAnimais.setText("Todos os animais");
-        jTodosOsAnimais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jTodosOsAnimais.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTodosOsAnimais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTodosOsAnimaisActionPerformed(evt);
+            }
+        });
         jVisaoGeral.add(jTodosOsAnimais);
 
         jBarraDeMenu.add(jVisaoGeral);
@@ -227,14 +241,14 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void jAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAnimalActionPerformed
         // TODO add your handling code here:
-        CadastrarAnimal ca = new CadastrarAnimal(this, rootPaneCheckingEnabled);
+        CadastrarAnimal ca = new CadastrarAnimal(sistema, this, rootPaneCheckingEnabled);
         ca.setLocationRelativeTo(null);
         ca.setVisible(true);
     }//GEN-LAST:event_jAnimalActionPerformed
 
     private void jFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFuncionarioActionPerformed
         // TODO add your handling code here:
-        CadastrarFuncionario cf = new CadastrarFuncionario(this, rootPaneCheckingEnabled);
+        CadastrarFuncionario cf = new CadastrarFuncionario(sistema, this, rootPaneCheckingEnabled);
         cf.setLocationRelativeTo(null);
         cf.setVisible(true);
     }//GEN-LAST:event_jFuncionarioActionPerformed
@@ -262,6 +276,18 @@ public class TelaInicial extends javax.swing.JFrame {
         pac.setLocationRelativeTo(null);
         pac.setVisible(true);
     }//GEN-LAST:event_jPesquisaCorredorActionPerformed
+
+    private void jTodosOsAnimaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTodosOsAnimaisActionPerformed
+        ExibirAnimais tela = new ExibirAnimais(sistema, this, rootPaneCheckingEnabled);
+        tela.setLocationRelativeTo(null);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jTodosOsAnimaisActionPerformed
+
+    private void jTodosOsFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTodosOsFuncionariosActionPerformed
+        ExibirFuncionarios tela = new ExibirFuncionarios(sistema, this, rootPaneCheckingEnabled);
+        tela.setLocationRelativeTo(null);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jTodosOsFuncionariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,7 +319,8 @@ public class TelaInicial extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaInicial().setVisible(true);
+                new TelaInicial(sistema).setVisible(true);
+
             }
         });
     }

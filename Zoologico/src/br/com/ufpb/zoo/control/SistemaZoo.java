@@ -23,15 +23,13 @@ public class SistemaZoo {
 
     /**
      * Modulo Animais
-     * @throws IOException 
-     *
      */
     
     public void cadastrarAnimal(Animal m) throws AnimalJaExistenteException, IOException {
         gerenteAnimal.cadastrarAnimal(m);
     }
 
-    public List<Animal> getAllAnimais() throws IOException {
+    public List<Animal> getAllAnimais() {
         return gerenteAnimal.getAllAnimais();
     }
 
@@ -51,7 +49,7 @@ public class SistemaZoo {
         this.gerenteFuncionario.cadastrarFuncionario(f);
     }
 
-    public Collection<Funcionario> getAllFuncionarios() {
+    public List<Funcionario> getAllFuncionarios() {
         return this.gerenteFuncionario.getAllFuncionarios();
     }
 
