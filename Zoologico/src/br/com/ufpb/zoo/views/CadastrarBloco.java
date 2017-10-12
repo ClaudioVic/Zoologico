@@ -5,11 +5,9 @@
  */
 package br.com.ufpb.zoo.views;
 
-import br.com.ufpb.zoo.model.*;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
-import javax.swing.JOptionPane;
 import br.com.ufpb.zoo.control.SistemaZoo;
 
 /**
@@ -18,20 +16,22 @@ import br.com.ufpb.zoo.control.SistemaZoo;
  */
 public class CadastrarBloco extends javax.swing.JDialog {
     
-    SistemaZoo sisZoo = new SistemaZoo();
+    private static SistemaZoo sisZoo;
     /**
      * Creates new form CadastrarFuncionario
      */
-    public CadastrarBloco(java.awt.Frame parent, boolean modal) {
+    public CadastrarBloco(SistemaZoo sistema,java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+        this.sisZoo = sistema;
         URL url = this.getClass().getResource("images/ZooIcone.png");
         Image ZooIcone = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(ZooIcone);
         setIconImage(ZooIcone);
     }
-
+    public void preencherCombo(){
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,11 +48,11 @@ public class CadastrarBloco extends javax.swing.JDialog {
         jNome = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         jResponsavel = new javax.swing.JLabel();
-        txtResponsavel = new javax.swing.JTextField();
         jObservacoes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtObservacoes = new javax.swing.JTextArea();
         btnCadastrarBloco = new javax.swing.JButton();
+        comboFuncionario = new javax.swing.JComboBox<>();
 
         jTextField1.setText("jTextField1");
 
@@ -71,12 +71,6 @@ public class CadastrarBloco extends javax.swing.JDialog {
 
         jResponsavel.setText("Responsável:");
 
-        txtResponsavel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtResponsavelActionPerformed(evt);
-            }
-        });
-
         jObservacoes.setText("Observações:");
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -88,12 +82,14 @@ public class CadastrarBloco extends javax.swing.JDialog {
         jScrollPane1.setViewportView(txtObservacoes);
 
         btnCadastrarBloco.setText("Cadastrar");
-        btnCadastrarBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrarBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCadastrarBloco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarBlocoActionPerformed(evt);
             }
         });
+
+        comboFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,12 +104,15 @@ public class CadastrarBloco extends javax.swing.JDialog {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jNome)
                                     .addComponent(jResponsavel))
-                                .addGap(15, 15, 15)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
-                                    .addComponent(txtResponsavel)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(comboFuncionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addComponent(jObservacoes)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(116, 116, 116)
                         .addComponent(jCadastrarBloco)))
@@ -135,7 +134,7 @@ public class CadastrarBloco extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jResponsavel)
-                    .addComponent(txtResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addComponent(jObservacoes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -157,10 +156,6 @@ public class CadastrarBloco extends javax.swing.JDialog {
         String obs = txtObservacoes.toString();
        
     }//GEN-LAST:event_btnCadastrarBlocoActionPerformed
-
-    private void txtResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResponsavelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtResponsavelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,7 +188,7 @@ public class CadastrarBloco extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastrarBloco dialog = new CadastrarBloco(new javax.swing.JFrame(), true);
+                CadastrarBloco dialog = new CadastrarBloco(sisZoo,new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -207,6 +202,7 @@ public class CadastrarBloco extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrarBloco;
+    private javax.swing.JComboBox<String> comboFuncionario;
     private javax.swing.JLabel jCadastrarBloco;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jNome;
@@ -217,6 +213,5 @@ public class CadastrarBloco extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextArea txtObservacoes;
-    private javax.swing.JTextField txtResponsavel;
     // End of variables declaration//GEN-END:variables
 }

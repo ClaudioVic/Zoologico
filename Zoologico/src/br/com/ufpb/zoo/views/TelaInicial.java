@@ -254,7 +254,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jFuncionarioActionPerformed
 
     private void fBlocoSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fBlocoSubBlocoActionPerformed
-        CadastrarBloco cb = new CadastrarBloco(this, rootPaneCheckingEnabled);
+        CadastrarBloco cb = new CadastrarBloco(sistema,this, rootPaneCheckingEnabled);
         cb.setLocationRelativeTo(null);
         cb.setVisible(true);
     }//GEN-LAST:event_fBlocoSubBlocoActionPerformed

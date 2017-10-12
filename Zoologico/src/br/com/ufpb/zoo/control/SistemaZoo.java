@@ -1,7 +1,6 @@
 package br.com.ufpb.zoo.control;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
 
 import br.com.ufpb.zoo.exceptions.AnimalJaExistenteException;
