@@ -152,6 +152,7 @@ public class CadastrarCorredor extends javax.swing.JDialog {
         Corredor c = new Corredor(nome, b);
         try {
             this.sisZoo.cadastrarCorredor(c);
+            JOptionPane.showMessageDialog(null, "Corredor cadastrado!");
             dispose();
         } catch (CorredorJaExistenteException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());

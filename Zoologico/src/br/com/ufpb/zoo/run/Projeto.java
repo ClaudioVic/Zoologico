@@ -19,19 +19,15 @@ import javax.swing.JOptionPane;
  * @author robson
  */
 public class Projeto {
-    
-    
-    
     public static void main(String[] args){
         SistemaZoo sistema = new SistemaZoo();
         try {
             sistema.recuperaDoArquivo();
         } catch (IOException ex) {
-            Logger.getLogger(Projeto.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage());
         }
         TelaInicial tela = new TelaInicial(sistema);
         tela.setLocationRelativeTo(null);
         tela.setVisible(true);
-        
     }
 }
