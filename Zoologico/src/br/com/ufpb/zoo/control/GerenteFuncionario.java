@@ -31,14 +31,14 @@ public class GerenteFuncionario {
 
     public void cadastrarFuncionario(Funcionario f) throws FuncionarioJaExistenteException {
         Funcionario fun = funcionarios.get(f.getEmail());
-        if (this.funcionarios.get(fun) != null) {
-            throw new FuncionarioJaExistenteException("O funcionário informado já esta cadastrado!");
+        if (fun != null) {
+            throw new FuncionarioJaExistenteException("O funcionário informado já está cadastrado!");
         } else {
             funcionarios.put(f.getEmail(), f);
         }
     }
 
-    public List<Funcionario> getAllFuncionarios() {
+    public List<Funcionario> getAllOfficials() {
         return new ArrayList(this.funcionarios.values());
     }
 
@@ -47,10 +47,10 @@ public class GerenteFuncionario {
         if (f != null) {
             return f;
         } else {
-            throw new FuncionarioNaoExisteException("O funcionario informado não existe!");
+            throw new FuncionarioNaoExisteException("O funcionário informado não está cadastrado!");
         }
     }
-
+/*
     public void deletarFuncionario(Funcionario f) throws FuncionarioNaoExisteException {
         Funcionario fun = this.funcionarios.get(f.getEmail());
         if (fun != null) {
@@ -58,8 +58,10 @@ public class GerenteFuncionario {
         } else {
             throw new FuncionarioNaoExisteException("O funcionario informado não foi encontrado!");
         }
-    }
-     // Arquivos
+    }     */
+    
+    // Arquivos
+    
     public void salvarFuncionarios() throws IOException {
         this.gravador.gravar(new ArrayList(this.funcionarios.values()));
     }

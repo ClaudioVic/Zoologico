@@ -1,5 +1,8 @@
 package br.com.ufpb.zoo.model;
-
+/**
+ *
+ * @author robson
+ */
 import java.io.Serializable;
 
 public class Funcionario extends Pessoa implements Serializable{

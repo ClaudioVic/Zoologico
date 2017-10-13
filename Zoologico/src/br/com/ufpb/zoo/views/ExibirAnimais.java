@@ -7,22 +7,21 @@ package br.com.ufpb.zoo.views;
 
 import br.com.ufpb.zoo.control.SistemaZoo;
 import br.com.ufpb.zoo.views.tabelas.ModelTableAnimais;
-import br.com.ufpb.zoo.views.tabelas.ModelTableBlocos;
-import br.com.ufpb.zoo.views.tabelas.ModelTableFuncionarios;
 import java.util.ArrayList;
 
 /**
  *
  * @author robson
+ * @author Claudio Victor
  */
-public class VisaoGeral extends javax.swing.JDialog {
+public class ExibirAnimais extends javax.swing.JDialog {
 
     /**
      * Creates new form ExibirAnimais
      */
     private static SistemaZoo sistema;
 
-    public VisaoGeral(SistemaZoo sistema, java.awt.Frame parent, boolean modal) {
+    public ExibirAnimais(SistemaZoo sistema, java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.sistema = sistema;
         initComponents();
@@ -32,11 +31,6 @@ public class VisaoGeral extends javax.swing.JDialog {
     public void preencherTabela() {
         ModelTableAnimais ma = new ModelTableAnimais((ArrayList) sistema.getAllAnimais());
         tabelaAnimais.setModel(ma);
-
-        ModelTableFuncionarios ma2 = new ModelTableFuncionarios((ArrayList) sistema.getAllOfficials());
-        tabelaFuncionarios.setModel(ma2);
-        ModelTableBlocos ma3 = new ModelTableBlocos((ArrayList) sistema.getAllBlocos());
-        tabelaBlocos.setModel(ma3);
     }
 
     /**
@@ -48,34 +42,18 @@ public class VisaoGeral extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tabelaFuncionarios = new javax.swing.JTable();
+        jAnimaisCadastrados = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaAnimais = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabelaBlocos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(614, 349));
+        setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        jLabel1.setText("Visão Geral ");
-
-        tabelaFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(tabelaFuncionarios);
-
-        jTabbedPane2.addTab("Funcionários", jScrollPane3);
+        jAnimaisCadastrados.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jAnimaisCadastrados.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jAnimaisCadastrados.setText("     Animais Cadastrados     ");
+        jAnimaisCadastrados.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         tabelaAnimais.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -90,23 +68,6 @@ public class VisaoGeral extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(tabelaAnimais);
 
-        jTabbedPane2.addTab("Animais", jScrollPane1);
-
-        tabelaBlocos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(tabelaBlocos);
-
-        jTabbedPane2.addTab("Blocos", jScrollPane2);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,21 +75,21 @@ public class VisaoGeral extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(355, 355, 355)
-                        .addComponent(jLabel1)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                        .addGap(185, 185, 185)
+                        .addComponent(jAnimaisCadastrados)))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 17, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addGap(20, 20, 20)
+                .addComponent(jAnimaisCadastrados)
                 .addGap(18, 18, 18)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -151,21 +112,20 @@ public class VisaoGeral extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VisaoGeral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExibirAnimais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VisaoGeral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExibirAnimais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VisaoGeral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExibirAnimais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VisaoGeral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExibirAnimais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                VisaoGeral dialog = new VisaoGeral(sistema, new javax.swing.JFrame(), true);
+                ExibirAnimais dialog = new ExibirAnimais(sistema, new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -178,13 +138,8 @@ public class VisaoGeral extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jAnimaisCadastrados;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable tabelaAnimais;
-    private javax.swing.JTable tabelaBlocos;
-    private javax.swing.JTable tabelaFuncionarios;
     // End of variables declaration//GEN-END:variables
 }

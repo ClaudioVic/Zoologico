@@ -1,5 +1,8 @@
 package br.com.ufpb.zoo.model;
-
+/**
+ *
+ * @author robson
+ */
 public class Endereco {
 	private String logradouro;
 	private String cep;

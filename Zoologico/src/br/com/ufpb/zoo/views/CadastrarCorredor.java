@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.net.URL;
 import javax.swing.JOptionPane;
 import br.com.ufpb.zoo.control.SistemaZoo;
+import br.com.ufpb.zoo.exceptions.CorredorJaExistenteException;
 
 /**
  *
@@ -18,14 +19,14 @@ import br.com.ufpb.zoo.control.SistemaZoo;
  */
 public class CadastrarCorredor extends javax.swing.JDialog {
     
-    SistemaZoo sisZoo = new SistemaZoo();
+    private static SistemaZoo sisZoo ;
     /**
      * Creates new form CadastrarFuncionario
      */
-    public CadastrarCorredor(java.awt.Frame parent, boolean modal) {
+    public CadastrarCorredor(SistemaZoo sisZoo, java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+        this.sisZoo = sisZoo;
         URL url = this.getClass().getResource("images/ZooIcone.png");
         Image ZooIcone = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(ZooIcone);
@@ -133,9 +134,17 @@ public class CadastrarCorredor extends javax.swing.JDialog {
     private void btnCadastrarCorredorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarCorredorActionPerformed
         
         String nome = txtNome.getText();
-         
         String obs = txtObservacoes.toString();
-       
+        
+        Corredor corredor = new Corredor(nome,obs);
+
+       try{
+           sisZoo.cadastrarCorredor(corredor);
+           JOptionPane.showMessageDialog(null,"Cadastrado com sucesso!");
+           dispose();
+       }catch(CorredorJaExistenteException c){
+           JOptionPane.showMessageDialog(null,c.getMessage());
+       }
     }//GEN-LAST:event_btnCadastrarCorredorActionPerformed
 
     /**
@@ -171,7 +180,7 @@ public class CadastrarCorredor extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastrarCorredor dialog = new CadastrarCorredor(new javax.swing.JFrame(), true);
+                CadastrarCorredor dialog = new CadastrarCorredor(sisZoo,new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

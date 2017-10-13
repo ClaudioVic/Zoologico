@@ -1,14 +1,31 @@
 package br.com.ufpb.zoo.model;
+/**
+ *
+ * @author robson
+ * @author Clauido Victor
+ */
 
 public class Ambiente {
-	private int QTD_MAX_ANIMAIS;
+    
+	String nome;
 	private String especie;
+        private int QTD_MAX_ANIMAIS;
+        private String observacao;
 	
-	public Ambiente(int qTD_MAX_ANIMAIS, String especie) {
-		QTD_MAX_ANIMAIS = qTD_MAX_ANIMAIS;
-		this.especie = especie;
+	public Ambiente(String nome, String especie, int qTD_MAX_ANIMAIS, String observacao) {
+            this.nome = nome;
+            this.especie = especie;
+            QTD_MAX_ANIMAIS = qTD_MAX_ANIMAIS;
+            this.observacao = observacao;
 	}
 	
+        public String getNome(){
+            return this.nome;
+        }
+        public void setNome(String nome){
+            this.nome = nome;
+        }
+        
 	public int getQTD_MAX_ANIMAIS() {
 		return QTD_MAX_ANIMAIS;
 	}
@@ -21,8 +38,11 @@ public class Ambiente {
 	public void setEspecie(String especie) {
 		this.especie = especie;
 	}
-	
-	
-	
-	
+        
+        public String getObservacao() {
+		return this.observacao;
+	}
+	public void setObservacao(String obs) {
+		this.especie = obs;
+	}
 }

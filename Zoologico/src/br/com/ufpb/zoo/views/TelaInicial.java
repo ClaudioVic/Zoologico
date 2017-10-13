@@ -13,6 +13,7 @@ import java.net.URL;
 /**
  *
  * @author robson
+ * @author Claudio Victor
  */
 public class TelaInicial extends javax.swing.JFrame {
 
@@ -63,7 +64,7 @@ public class TelaInicial extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
-        jImagemZoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ufpb/zoo/views/images/Zoo_1.png"))); // NOI18N
+        jImagemZoo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Claudio Victor\\git\\Zoologico\\Zoologico\\images\\Zoo_1.png")); // NOI18N
         jImagemZoo.setText("jLabel1");
         jImagemZoo.setMaximumSize(new java.awt.Dimension(800, 500));
         jImagemZoo.setMinimumSize(new java.awt.Dimension(800, 500));
@@ -191,7 +192,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCorredorSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCorredorSubBlocoActionPerformed
-        CadastrarCorredor cc = new CadastrarCorredor(this, rootPaneCheckingEnabled);
+        CadastrarCorredor cc = new CadastrarCorredor(sistema, this, rootPaneCheckingEnabled);
         cc.setLocationRelativeTo(null);
         cc.setVisible(true);
     }//GEN-LAST:event_jCorredorSubBlocoActionPerformed
@@ -223,7 +224,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_fBlocoSubBlocoActionPerformed
 
     private void jAmbienteSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAmbienteSubBlocoActionPerformed
-        CadastrarAmbiente cam = new CadastrarAmbiente(this, rootPaneCheckingEnabled);
+        CadastrarAmbiente cam = new CadastrarAmbiente(sistema,this, rootPaneCheckingEnabled);
         cam.setLocationRelativeTo(null);
         cam.setVisible(true);
     }//GEN-LAST:event_jAmbienteSubBlocoActionPerformed
