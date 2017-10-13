@@ -30,9 +30,9 @@ public class GerenteAmbiente {
     }
 
     public void cadastrarAmbiente(Ambiente a) throws AmbienteJaExistenteException {
-        Ambiente amb = this.ambientes.get(a.getNome() + a.getEspecie());
+        Ambiente amb = this.ambientes.get(a.getNome());
         if (amb == null) {
-            this.ambientes.put(a.getNome() + a.getEspecie(), a);
+            this.ambientes.put(a.getNome(), a);
 
         } else {
             throw new AmbienteJaExistenteException("O Ambiente informado já está cadastrado!");
@@ -43,8 +43,8 @@ public class GerenteAmbiente {
         return new ArrayList(this.ambientes.values());
     }
 
-    public Ambiente pesquisaAmbiente(String nome, String especie) throws AmbienteNaoExisteException {
-        Ambiente amb = this.ambientes.get(nome + especie);
+    public Ambiente pesquisaAmbiente(String nome) throws AmbienteNaoExisteException {
+        Ambiente amb = this.ambientes.get(nome);
         if (amb != null) {
             return amb;
         } else {

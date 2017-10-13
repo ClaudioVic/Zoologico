@@ -6,8 +6,10 @@
 package br.com.ufpb.zoo.views;
 
 import br.com.ufpb.zoo.control.SistemaZoo;
+import br.com.ufpb.zoo.views.tabelas.ModelTableAmbientes;
 import br.com.ufpb.zoo.views.tabelas.ModelTableAnimais;
 import br.com.ufpb.zoo.views.tabelas.ModelTableBlocos;
+import br.com.ufpb.zoo.views.tabelas.ModelTableCorredores;
 import br.com.ufpb.zoo.views.tabelas.ModelTableFuncionarios;
 import java.util.ArrayList;
 
@@ -30,12 +32,21 @@ public class VisaoGeral extends javax.swing.JDialog {
     }
 
     public void preencherTabela() {
+        //animais
         ModelTableAnimais ma = new ModelTableAnimais((ArrayList) sistema.getAllAnimais());
         tabelaAnimais.setModel(ma);
+        //funcionarios
         ModelTableFuncionarios ma2 = new ModelTableFuncionarios((ArrayList) sistema.getAllOfficials());
         tabelaFuncionarios.setModel(ma2);
+        //blocos
         ModelTableBlocos ma3 = new ModelTableBlocos((ArrayList) sistema.getAllBlocos());
         tabelaBlocos.setModel(ma3);
+        //corredores
+        ModelTableCorredores ma4 = new ModelTableCorredores((ArrayList) sistema.getAllHalls());
+        tableCorredores.setModel(ma4);
+        //ambientes
+        ModelTableAmbientes ma5 = new ModelTableAmbientes((ArrayList) sistema.getAllAmbientes());
+        tableAmbientes.setModel(ma5);
     }
 
     /**
@@ -55,6 +66,10 @@ public class VisaoGeral extends javax.swing.JDialog {
         tabelaAnimais = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabelaBlocos = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tableCorredores = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tableAmbientes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -105,6 +120,36 @@ public class VisaoGeral extends javax.swing.JDialog {
         jScrollPane2.setViewportView(tabelaBlocos);
 
         jTabbedPane2.addTab("Blocos", jScrollPane2);
+
+        tableCorredores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(tableCorredores);
+
+        jTabbedPane2.addTab("Corredores", jScrollPane4);
+
+        tableAmbientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(tableAmbientes);
+
+        jTabbedPane2.addTab("Ambientes", jScrollPane5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,9 +226,13 @@ public class VisaoGeral extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable tabelaAnimais;
     private javax.swing.JTable tabelaBlocos;
     private javax.swing.JTable tabelaFuncionarios;
+    private javax.swing.JTable tableAmbientes;
+    private javax.swing.JTable tableCorredores;
     // End of variables declaration//GEN-END:variables
 }

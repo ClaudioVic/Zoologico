@@ -248,9 +248,14 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_fBlocoSubBlocoActionPerformed
 
     private void jAmbienteSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAmbienteSubBlocoActionPerformed
-        CadastrarAmbiente cam = new CadastrarAmbiente(sistema, this, rootPaneCheckingEnabled);
-        cam.setLocationRelativeTo(null);
-        cam.setVisible(true);
+        if (sistema.getAllHalls().size() != 0) {
+            CadastrarAmbiente cam = new CadastrarAmbiente(sistema, this, rootPaneCheckingEnabled);
+            cam.setLocationRelativeTo(null);
+            cam.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum corredor cadastrado!");
+        }
+        
     }//GEN-LAST:event_jAmbienteSubBlocoActionPerformed
 
     private void jPesquisaBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPesquisaBlocoActionPerformed

@@ -125,8 +125,8 @@ public class SistemaZoo {
         return this.gerenteAmbiente.getAllAmbientes();
     }
     
-    public Ambiente pesquisaAmbiente(String nome, String especie) throws AmbienteNaoExisteException {
-        return this.gerenteAmbiente.pesquisaAmbiente(nome,especie);
+    public Ambiente pesquisaAmbiente(String nome) throws AmbienteNaoExisteException {
+        return this.gerenteAmbiente.pesquisaAmbiente(nome);
     }
     
 //    Recuperar listas
@@ -134,11 +134,14 @@ public class SistemaZoo {
         this.gerenteAnimal.salvarAnimais();
         this.gerenteFuncionario.salvarFuncionarios();
         this.gerenteBloco.salvarBlocos();
+        this.gerenteAmbiente.salvarAmbiente();
         this.gerenteCorredor.salvarCorredor();
     }
     public void recuperaDoArquivo() throws IOException{
         this.gerenteAnimal.recuperarAnimais();
         this.gerenteBloco.recuperarBlocos();
         this.gerenteFuncionario.recuperarFuncionarios();
+        this.gerenteAmbiente.recuperarAmbientes();
+        this.gerenteCorredor.recuperarCorredores();
     }
 }

@@ -166,7 +166,7 @@ public class CadastrarBloco extends javax.swing.JDialog {
             } catch (FuncionarioNaoExisteException ex) {
                 JOptionPane.showMessageDialog(this, ex.getMessage());
             }
-            String obs = txtObservacoes.toString();
+            String obs = txtObservacoes.getText();
             Bloco b = new Bloco(nome,f,obs);
             sisZoo.cadastraBloco(b);
             JOptionPane.showMessageDialog(null, "Bloco cadastrado!");

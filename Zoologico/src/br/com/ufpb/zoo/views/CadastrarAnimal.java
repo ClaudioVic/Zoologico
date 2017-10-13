@@ -189,16 +189,12 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         String data = dataEntrada.toString();
         Ambiente a = null;
         try {
-            a = sistema.pesquisaAmbiente(comboAmbientes.getSelectedItem().toString(), especie);
-        }catch (AmbienteNaoExisteException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-        Animal animal = new Animal(nome, especie, data, obs, a);
-        try {
+            a = sistema.pesquisaAmbiente(comboAmbientes.getSelectedItem().toString());
+            Animal animal = new Animal(nome, especie, data, obs, a);
             this.sistema.cadastrarAnimal(animal);
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
             dispose();
-        } catch (AnimalJaExistenteException ex) {
+        } catch (AnimalJaExistenteException | AmbienteNaoExisteException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_btnCadastrarAnimalMouseClicked
