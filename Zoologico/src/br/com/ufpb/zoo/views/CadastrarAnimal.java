@@ -54,7 +54,7 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         txtEspecie = new javax.swing.JTextField();
         btnCadastrarAnimal = new javax.swing.JButton();
         txtObsCadastrar = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtObs = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -83,7 +83,7 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         });
 
         btnCadastrarAnimal.setText("Cadastrar");
-        btnCadastrarAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrarAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCadastrarAnimal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCadastrarAnimalMouseClicked(evt);
@@ -99,9 +99,10 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         txtObsCadastrar.setToolTipText("");
         txtObsCadastrar.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        txtObsCadastrar.setViewportView(jTextArea1);
+        txtObs.setColumns(20);
+        txtObs.setRows(5);
+        txtObs.setText("\n");
+        txtObsCadastrar.setViewportView(txtObs);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,7 +165,7 @@ public class CadastrarAnimal extends javax.swing.JDialog {
     private void btnCadastrarAnimalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarAnimalMouseClicked
         String nome = txtNome.getText();
         String especie = txtEspecie.getText();
-        String obs = txtObsCadastrar.toString();
+        String obs = txtObs.getText();
         Date dataEntrada = new Date();
         String data = dataEntrada.toString();
         Animal animal = new Animal(nome, especie, data, obs);
@@ -235,9 +236,9 @@ public class CadastrarAnimal extends javax.swing.JDialog {
     private javax.swing.JLabel jEspecie;
     private javax.swing.JLabel jNome;
     private javax.swing.JLabel jObservacao;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField txtEspecie;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextArea txtObs;
     private javax.swing.JScrollPane txtObsCadastrar;
     // End of variables declaration//GEN-END:variables
 

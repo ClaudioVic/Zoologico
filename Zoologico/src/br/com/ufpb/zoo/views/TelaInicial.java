@@ -40,6 +40,7 @@ public class TelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jImagemZoo = new javax.swing.JLabel();
         jBarraDeMenu = new javax.swing.JMenuBar();
         jCadastro = new javax.swing.JMenu();
@@ -55,11 +56,8 @@ public class TelaInicial extends javax.swing.JFrame {
         jPesquisaBloco = new javax.swing.JMenuItem();
         jPesquisaCorredor = new javax.swing.JMenuItem();
         jVisaoGeral = new javax.swing.JMenu();
-        jTodosOsFuncionarios = new javax.swing.JMenuItem();
-        jTodosOsBlocos = new javax.swing.JMenuItem();
-        jTodosOsCorredores = new javax.swing.JMenuItem();
-        jTodosOsAmbientes = new javax.swing.JMenuItem();
-        jTodosOsAnimais = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -169,42 +167,11 @@ public class TelaInicial extends javax.swing.JFrame {
         jVisaoGeral.setText("Visão Geral");
         jVisaoGeral.setActionCommand("");
         jVisaoGeral.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jTodosOsFuncionarios.setText("Todos os funcionários");
-        jTodosOsFuncionarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTodosOsFuncionarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTodosOsFuncionariosActionPerformed(evt);
+        jVisaoGeral.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jVisaoGeralMouseClicked(evt);
             }
         });
-        jVisaoGeral.add(jTodosOsFuncionarios);
-
-        jTodosOsBlocos.setText("Todos os blocos");
-        jTodosOsBlocos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jVisaoGeral.add(jTodosOsBlocos);
-
-        jTodosOsCorredores.setText("Todos os corredores");
-        jTodosOsCorredores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jVisaoGeral.add(jTodosOsCorredores);
-
-        jTodosOsAmbientes.setText("Todos os ambientes");
-        jTodosOsAmbientes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTodosOsAmbientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTodosOsAmbientesActionPerformed(evt);
-            }
-        });
-        jVisaoGeral.add(jTodosOsAmbientes);
-
-        jTodosOsAnimais.setText("Todos os animais");
-        jTodosOsAnimais.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTodosOsAnimais.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTodosOsAnimaisActionPerformed(evt);
-            }
-        });
-        jVisaoGeral.add(jTodosOsAnimais);
-
         jBarraDeMenu.add(jVisaoGeral);
 
         setJMenuBar(jBarraDeMenu);
@@ -234,10 +201,6 @@ public class TelaInicial extends javax.swing.JFrame {
         pla.setLocationRelativeTo(null);
         pla.setVisible(true);
     }//GEN-LAST:event_jPesquisaLocalActionPerformed
-
-    private void jTodosOsAmbientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTodosOsAmbientesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTodosOsAmbientesActionPerformed
 
     private void jAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAnimalActionPerformed
         // TODO add your handling code here:
@@ -277,17 +240,11 @@ public class TelaInicial extends javax.swing.JFrame {
         pac.setVisible(true);
     }//GEN-LAST:event_jPesquisaCorredorActionPerformed
 
-    private void jTodosOsAnimaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTodosOsAnimaisActionPerformed
-        ExibirAnimais tela = new ExibirAnimais(sistema, this, rootPaneCheckingEnabled);
-        tela.setLocationRelativeTo(null);
-        tela.setVisible(true);
-    }//GEN-LAST:event_jTodosOsAnimaisActionPerformed
-
-    private void jTodosOsFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTodosOsFuncionariosActionPerformed
-        ExibirFuncionarios tela = new ExibirFuncionarios(sistema, this, rootPaneCheckingEnabled);
-        tela.setLocationRelativeTo(null);
-        tela.setVisible(true);
-    }//GEN-LAST:event_jTodosOsFuncionariosActionPerformed
+    private void jVisaoGeralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jVisaoGeralMouseClicked
+       VisaoGeral tela = new VisaoGeral(sistema, this, rootPaneCheckingEnabled);
+       tela.setLocationRelativeTo(null);
+       tela.setVisible(true);
+    }//GEN-LAST:event_jVisaoGeralMouseClicked
 
     /**
      * @param args the command line arguments
@@ -336,15 +293,11 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem jCorredorSubBloco;
     private javax.swing.JMenuItem jFuncionario;
     private javax.swing.JLabel jImagemZoo;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu jPesquisaAnimal;
     private javax.swing.JMenuItem jPesquisaBloco;
     private javax.swing.JMenuItem jPesquisaCorredor;
     private javax.swing.JMenuItem jPesquisaLocal;
-    private javax.swing.JMenuItem jTodosOsAmbientes;
-    private javax.swing.JMenuItem jTodosOsAnimais;
-    private javax.swing.JMenuItem jTodosOsBlocos;
-    private javax.swing.JMenuItem jTodosOsCorredores;
-    private javax.swing.JMenuItem jTodosOsFuncionarios;
     private javax.swing.JMenu jVisaoGeral;
     // End of variables declaration//GEN-END:variables
 }

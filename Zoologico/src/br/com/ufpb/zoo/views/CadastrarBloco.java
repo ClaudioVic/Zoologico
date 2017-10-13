@@ -9,6 +9,11 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 import br.com.ufpb.zoo.control.SistemaZoo;
+import br.com.ufpb.zoo.exceptions.BlocoJaExistenteException;
+import br.com.ufpb.zoo.exceptions.FuncionarioNaoExisteException;
+import br.com.ufpb.zoo.model.Bloco;
+import br.com.ufpb.zoo.model.Funcionario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,13 +29,17 @@ public class CadastrarBloco extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.sisZoo = sistema;
+        preencherCombo();
+        //
         URL url = this.getClass().getResource("images/ZooIcone.png");
         Image ZooIcone = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(ZooIcone);
         setIconImage(ZooIcone);
     }
     public void preencherCombo(){
-        
+       for (int i=0;i<sisZoo.getAllFuncionarios().size();i++){
+           comboFuncionario.addItem(sisZoo.getAllFuncionarios().get(i).getNome());
+       }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -88,8 +97,6 @@ public class CadastrarBloco extends javax.swing.JDialog {
                 btnCadastrarBlocoActionPerformed(evt);
             }
         });
-
-        comboFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,10 +158,22 @@ public class CadastrarBloco extends javax.swing.JDialog {
 
     private void btnCadastrarBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarBlocoActionPerformed
         
-        String nome = txtNome.getText();
-        
-        String obs = txtObservacoes.toString();
-       
+        try {
+            String nome = txtNome.getText();
+            Funcionario f = null;
+            try {
+                f = sisZoo.pesquisaFuncionario(comboFuncionario.getSelectedItem().toString());
+            } catch (FuncionarioNaoExisteException ex) {
+                JOptionPane.showMessageDialog(this, ex.getMessage());
+            }
+            String obs = txtObservacoes.toString();
+            Bloco b = new Bloco(nome,f,obs);
+            sisZoo.cadastraBloco(b);
+            JOptionPane.showMessageDialog(null, "Bloco cadastrado!");
+            dispose();
+        } catch (BlocoJaExistenteException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     }//GEN-LAST:event_btnCadastrarBlocoActionPerformed
 
     /**
