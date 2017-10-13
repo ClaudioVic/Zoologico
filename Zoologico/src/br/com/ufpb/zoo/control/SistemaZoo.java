@@ -1,5 +1,7 @@
 package br.com.ufpb.zoo.control;
 
+import br.com.ufpb.zoo.exceptions.AmbienteJaExistenteException;
+import br.com.ufpb.zoo.exceptions.AmbienteNaoExisteException;
 import java.io.IOException;
 import java.util.List;
 

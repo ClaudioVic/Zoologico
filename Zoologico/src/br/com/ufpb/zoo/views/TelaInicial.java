@@ -56,6 +56,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jPesquisaBloco = new javax.swing.JMenuItem();
         jPesquisaCorredor = new javax.swing.JMenuItem();
         jVisaoGeral = new javax.swing.JMenu();
+        sair = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -174,6 +175,14 @@ public class TelaInicial extends javax.swing.JFrame {
         });
         jBarraDeMenu.add(jVisaoGeral);
 
+        sair.setText("Sair");
+        sair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sairMouseClicked(evt);
+            }
+        });
+        jBarraDeMenu.add(sair);
+
         setJMenuBar(jBarraDeMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -246,6 +255,10 @@ public class TelaInicial extends javax.swing.JFrame {
        tela.setVisible(true);
     }//GEN-LAST:event_jVisaoGeralMouseClicked
 
+    private void sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairMouseClicked
+       dispose();
+    }//GEN-LAST:event_sairMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -299,5 +312,6 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem jPesquisaCorredor;
     private javax.swing.JMenuItem jPesquisaLocal;
     private javax.swing.JMenu jVisaoGeral;
+    private javax.swing.JMenu sair;
     // End of variables declaration//GEN-END:variables
 }

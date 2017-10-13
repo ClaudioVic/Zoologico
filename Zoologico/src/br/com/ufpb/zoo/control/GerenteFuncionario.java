@@ -38,7 +38,7 @@ public class GerenteFuncionario {
         }
     }
 
-    public List<Funcionario> getAllFuncionarios() {
+    public List<Funcionario> getAllOfficials() {
         return new ArrayList(this.funcionarios.values());
     }
 
