@@ -1,8 +1,5 @@
 package br.com.ufpb.zoo.model;
-/**
- *
- * @author robson
- */
+
 public abstract class Pessoa {
 	private String nome;
         private String email;

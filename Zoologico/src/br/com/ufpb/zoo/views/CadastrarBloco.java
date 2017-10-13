@@ -37,8 +37,8 @@ public class CadastrarBloco extends javax.swing.JDialog {
         setIconImage(ZooIcone);
     }
     public void preencherCombo(){
-       for (int i=0;i<sisZoo.getAllOfficials().size();i++){
-           comboFuncionario.addItem(sisZoo.getAllOfficials().get(i).getNome());
+       for (int i=0;i<sisZoo.getAllFuncionarios().size();i++){
+           comboFuncionario.addItem(sisZoo.getAllFuncionarios().get(i).getNome());
        }
     }
     /**

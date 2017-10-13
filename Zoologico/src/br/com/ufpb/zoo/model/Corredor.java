@@ -4,42 +4,29 @@ package br.com.ufpb.zoo.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Claudio Victor
- */
-
 public class Corredor {
-   	
-	private String nome;
-	private List<Ambiente> ambientes;
-        private String observacao;
 	
-	public Corredor (String nome,String obs){
-		this.nome = nome;
-                this.observacao = obs;
-		this.ambientes = new ArrayList<>();
+	private String nome;
+	private List<Ambiente> jaulas;
+	
+	public Corredor (String numero){
+		this.nome = numero;
+		this.jaulas = new ArrayList<>();
 	}
 	
 	public Corredor(){
-		this("","Sem Observações");
+		this("");
 	}
 	
-	public String getNome(){
+	public String getNumero(){
 		return this.nome;
 	}
-	public void setNome(String nome){
-		this.nome = nome;
+	
+	public void setNumero(String numero){
+		this.nome = numero;
 	}
 	
 	public List<Ambiente> getJaulas(){
-		return this.ambientes;
+		return this.jaulas;
 	}
-        
-        public String getObservacao(){
-		return this.observacao;
-	}
-	public void setObservacao(String obs){
-		this.nome = obs;
-	}   
 }

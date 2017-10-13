@@ -1,8 +1,5 @@
 package br.com.ufpb.zoo.model;
-/**
- *
- * @author Claudio Victor
- */
+
 public class Bloco {
 
     private String nome;

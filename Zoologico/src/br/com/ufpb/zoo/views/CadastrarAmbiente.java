@@ -5,15 +5,12 @@
  */
 package br.com.ufpb.zoo.views;
 
+import br.com.ufpb.zoo.model.*;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.net.URL;
 import javax.swing.JOptionPane;
-
-import javax.swing.JOptionPane;
 import br.com.ufpb.zoo.control.SistemaZoo;
-import br.com.ufpb.zoo.exceptions.AmbienteJaExistenteException;
-import br.com.ufpb.zoo.model.Ambiente;
 
 /**
  *
@@ -21,21 +18,19 @@ import br.com.ufpb.zoo.model.Ambiente;
  */
 public class CadastrarAmbiente extends javax.swing.JDialog {
     
-    private static SistemaZoo sisZoo;
+    SistemaZoo sisZoo = new SistemaZoo();
     /**
      * Creates new form CadastrarFuncionario
      */
-    public CadastrarAmbiente(SistemaZoo sistema,java.awt.Frame parent, boolean modal) {
+    public CadastrarAmbiente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.sisZoo = sistema;
+        
         URL url = this.getClass().getResource("images/ZooIcone.png");
         Image ZooIcone = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(ZooIcone);
         setIconImage(ZooIcone);
     }
-
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,8 +45,6 @@ public class CadastrarAmbiente extends javax.swing.JDialog {
         jScrollPane2 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
         jCadastrarBloco = new javax.swing.JLabel();
-        jNome = new javax.swing.JLabel();
-        txtNome = new javax.swing.JTextField();
         jQtdAnimais = new javax.swing.JLabel();
         txtQtdAnimais = new javax.swing.JTextField();
         jEspecie = new javax.swing.JLabel();
@@ -72,14 +65,6 @@ public class CadastrarAmbiente extends javax.swing.JDialog {
         jCadastrarBloco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jCadastrarBloco.setText("  Cadastrar Ambiente  ");
         jCadastrarBloco.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jNome.setText("Nome:");
-
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
-            }
-        });
 
         jQtdAnimais.setLabelFor(txtQtdAnimais);
         jQtdAnimais.setText("Quantidade de Animais:");
@@ -123,13 +108,11 @@ public class CadastrarAmbiente extends javax.swing.JDialog {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jQtdAnimais)
-                                    .addComponent(jEspecie)
-                                    .addComponent(jNome))
+                                    .addComponent(jEspecie))
                                 .addGap(15, 15, 15)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtQtdAnimais, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtEspecie, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                                    .addComponent(txtNome)))
+                                    .addComponent(txtEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
@@ -144,11 +127,7 @@ public class CadastrarAmbiente extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jCadastrarBloco)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jNome)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jEspecie)
                     .addComponent(txtEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -156,7 +135,7 @@ public class CadastrarAmbiente extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtQtdAnimais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jQtdAnimais))
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addComponent(jObservacoes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -171,29 +150,13 @@ public class CadastrarAmbiente extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarAmbienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarAmbienteActionPerformed
-        
-        String nome = txtNome.getText();
-        String especie = txtEspecie.getText();
-        int qtdAnimais = Integer.parseInt(txtQtdAnimais.getText());
-        String obs = txtObservacoes.toString();
-        
-        Ambiente ambiente = new Ambiente(nome,especie,qtdAnimais,obs);
-        
-        try{
-            sisZoo.cadastrarAmbiente(ambiente);
-            JOptionPane.showMessageDialog(null,"Cadastrado com sucesso!");
-        }catch(AmbienteJaExistenteException a){
-            JOptionPane.showMessageDialog(null,a.getMessage());
-        }
+        // TODO
+       
     }//GEN-LAST:event_btnCadastrarAmbienteActionPerformed
 
     private void txtEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEspecieActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEspecieActionPerformed
-
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,7 +191,7 @@ public class CadastrarAmbiente extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastrarAmbiente dialog = new CadastrarAmbiente(sisZoo,new javax.swing.JFrame(), true);
+                CadastrarAmbiente dialog = new CadastrarAmbiente(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -245,14 +208,12 @@ public class CadastrarAmbiente extends javax.swing.JDialog {
     private javax.swing.JLabel jCadastrarBloco;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jEspecie;
-    private javax.swing.JLabel jNome;
     private javax.swing.JLabel jObservacoes;
     private javax.swing.JLabel jQtdAnimais;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtEspecie;
-    private javax.swing.JTextField txtNome;
     private javax.swing.JTextArea txtObservacoes;
     private javax.swing.JTextField txtQtdAnimais;
     // End of variables declaration//GEN-END:variables

@@ -52,13 +52,11 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jQtdAnimais" min="-2" max="-2" attributes="0"/>
                                   <Component id="jEspecie" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jNome" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="txtQtdAnimais" min="-2" pref="55" max="-2" attributes="0"/>
-                                  <Component id="txtEspecie" pref="214" max="32767" attributes="0"/>
-                                  <Component id="txtNome" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtEspecie" min="-2" pref="214" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
@@ -82,12 +80,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="jCadastrarBloco" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jNome" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtNome" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jEspecie" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtEspecie" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -97,7 +90,7 @@
                   <Component id="txtQtdAnimais" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jQtdAnimais" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="jObservacoes" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
@@ -122,16 +115,6 @@
           </Border>
         </Property>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jNome">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nome:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtNome">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jQtdAnimais">
       <Properties>

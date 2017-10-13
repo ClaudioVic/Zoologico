@@ -32,8 +32,7 @@ public class VisaoGeral extends javax.swing.JDialog {
     public void preencherTabela() {
         ModelTableAnimais ma = new ModelTableAnimais((ArrayList) sistema.getAllAnimais());
         tabelaAnimais.setModel(ma);
-
-        ModelTableFuncionarios ma2 = new ModelTableFuncionarios((ArrayList) sistema.getAllOfficials());
+        ModelTableFuncionarios ma2 = new ModelTableFuncionarios((ArrayList) sistema.getAllFuncionarios());
         tabelaFuncionarios.setModel(ma2);
         ModelTableBlocos ma3 = new ModelTableBlocos((ArrayList) sistema.getAllBlocos());
         tabelaBlocos.setModel(ma3);
