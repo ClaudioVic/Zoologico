@@ -6,11 +6,12 @@
 package br.com.ufpb.zoo.views;
 
 import br.com.ufpb.zoo.control.SistemaZoo;
+import br.com.ufpb.zoo.exceptions.AmbienteNaoExisteException;
 import br.com.ufpb.zoo.exceptions.AnimalJaExistenteException;
+import br.com.ufpb.zoo.model.Ambiente;
 import br.com.ufpb.zoo.model.Animal;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -35,6 +36,13 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         Image ZooIcone = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(ZooIcone);
         setIconImage(ZooIcone);
+        preencherCombo();
+    }
+
+    public void preencherCombo() {
+        for (int i = 0; i < this.sistema.getAllAmbientes().size(); i++) {
+            comboAmbientes.addItem(this.sistema.getAllAmbientes().get(i).getNome());
+        }
     }
 
     /**
@@ -55,6 +63,8 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         btnCadastrarAnimal = new javax.swing.JButton();
         txtObsCadastrar = new javax.swing.JScrollPane();
         txtObs = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        comboAmbientes = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -104,13 +114,14 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         txtObs.setText("\n");
         txtObsCadastrar.setViewportView(txtObs);
 
+        jLabel1.setText("Ambiente:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtObsCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,13 +136,17 @@ public class CadastrarAnimal extends javax.swing.JDialog {
                                     .addComponent(txtEspecie)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
-                                        .addComponent(jCadastrarAnimal)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(31, 31, 31))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnCadastrarAnimal)
-                .addGap(153, 153, 153))
+                                        .addComponent(jCadastrarAnimal))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(comboAmbientes, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtObsCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(182, 182, 182)
+                        .addComponent(btnCadastrarAnimal)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,13 +161,17 @@ public class CadastrarAnimal extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jEspecie))
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(comboAmbientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
                 .addComponent(jObservacao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtObsCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCadastrarAnimal)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -168,14 +187,18 @@ public class CadastrarAnimal extends javax.swing.JDialog {
         String obs = txtObs.getText();
         Date dataEntrada = new Date();
         String data = dataEntrada.toString();
-        Animal animal = new Animal(nome, especie, data, obs);
+        Ambiente a = null;
+        try {
+            a = sistema.pesquisaAmbiente(comboAmbientes.getSelectedItem().toString(), especie);
+        }catch (AmbienteNaoExisteException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        Animal animal = new Animal(nome, especie, data, obs, a);
         try {
             this.sistema.cadastrarAnimal(animal);
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
             dispose();
         } catch (AnimalJaExistenteException ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_btnCadastrarAnimalMouseClicked
@@ -232,8 +255,10 @@ public class CadastrarAnimal extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrarAnimal;
+    private javax.swing.JComboBox<String> comboAmbientes;
     private javax.swing.JLabel jCadastrarAnimal;
     private javax.swing.JLabel jEspecie;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jNome;
     private javax.swing.JLabel jObservacao;
     private javax.swing.JTextField txtEspecie;

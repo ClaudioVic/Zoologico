@@ -15,6 +15,7 @@ import br.com.ufpb.zoo.exceptions.AnimalJaExistenteException;
 import br.com.ufpb.zoo.exceptions.AnimalNaoExisteException;
 import br.com.ufpb.zoo.gravador.Gravador;
 import br.com.ufpb.zoo.model.Animal;
+import br.com.ufpb.zoo.model.Bloco;
 
 /**
  *
@@ -30,7 +31,7 @@ public class GerenteAnimal {
         this.animais = new HashMap<String, Animal>();
     }
 
-    public void cadastrarAnimal(Animal m) throws AnimalJaExistenteException, IOException {
+    public void cadastrarAnimal(Animal m) throws AnimalJaExistenteException {
         Animal a = this.animais.get(m.toString());
         if (a == null) {
             animais.put(m.toString(), m);
@@ -64,7 +65,7 @@ public class GerenteAnimal {
     public void salvarAnimais() throws IOException {
         this.gravador.gravar(new ArrayList(this.animais.values()));
     }
-    public List<Animal> recuperarAnimais() throws IOException{
-        return this.gravador.ler();
+    public void recuperarAnimais() throws IOException{
+       for (Animal i : this.gravador.ler()) this.animais.put(i.getNome()+i.getEspecie(),i);
     }
 }

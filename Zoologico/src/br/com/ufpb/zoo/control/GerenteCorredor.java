@@ -55,7 +55,7 @@ public class GerenteCorredor {
         this.gravador.gravar( new ArrayList(this.corredores.values()));
     }
     
-    public List<Corredor> recuperarCorredores() throws IOException{
-        return this.gravador.ler();
+    public void recuperarCorredores() throws IOException{
+        for (Corredor i : this.gravador.ler()) this.corredores.put(i.getNome(),i);
     }
 }

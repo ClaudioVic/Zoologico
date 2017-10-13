@@ -46,7 +46,7 @@ public class SistemaZoo {
      * Modulo Animais
      */
     
-    public void cadastrarAnimal(Animal m) throws AnimalJaExistenteException, IOException {
+    public void cadastrarAnimal(Animal m) throws AnimalJaExistenteException{
         gerenteAnimal.cadastrarAnimal(m);
     }
 
@@ -74,8 +74,8 @@ public class SistemaZoo {
         return this.gerenteFuncionario.getAllOfficials();
     }
 
-    public Funcionario pesquisaFuncionario(String email) throws FuncionarioNaoExisteException {
-        return this.gerenteFuncionario.pesquisaFuncionario(email);
+    public Funcionario pesquisaFuncionario(String nome) throws FuncionarioNaoExisteException {
+        return this.gerenteFuncionario.pesquisaFuncionario(nome);
     }
     /*
     public void deletarFuncionario(Funcionario f) throws FuncionarioNaoExisteException {
@@ -121,11 +121,24 @@ public class SistemaZoo {
         this.gerenteAmbiente.cadastrarAmbiente(a);
     }
     
-    public List<Ambiente> getAllEnviroment(){
-        return this.gerenteAmbiente.getAllEnviroment();
+    public List<Ambiente> getAllAmbientes(){
+        return this.gerenteAmbiente.getAllAmbientes();
     }
     
     public Ambiente pesquisaAmbiente(String nome, String especie) throws AmbienteNaoExisteException {
         return this.gerenteAmbiente.pesquisaAmbiente(nome,especie);
+    }
+    
+//    Recuperar listas
+    public void salvarNoArquivo() throws IOException{
+        this.gerenteAnimal.salvarAnimais();
+        this.gerenteFuncionario.salvarFuncionarios();
+        this.gerenteBloco.salvarBlocos();
+        this.gerenteCorredor.salvarCorredor();
+    }
+    public void recuperaDoArquivo() throws IOException{
+        this.gerenteAnimal.recuperarAnimais();
+        this.gerenteBloco.recuperarBlocos();
+        this.gerenteFuncionario.recuperarFuncionarios();
     }
 }

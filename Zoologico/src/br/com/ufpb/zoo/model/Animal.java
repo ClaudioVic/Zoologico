@@ -13,14 +13,24 @@ public class Animal implements Serializable {
     private String especie;
     private String dataEntrada;
     private String observacao;
+    private Ambiente ambiente;
 
-    public Animal(String nome, String especie, String dataEntrada, String obs) {
+    public Animal(String nome, String especie, String dataEntrada, String obs, Ambiente ambiente) {
         this.nome = nome;
         this.especie = especie;
         this.dataEntrada = dataEntrada;
         this.observacao = obs;
+        this.ambiente = ambiente;
     }
 
+    public Ambiente getAmbiente() {
+        return ambiente;
+    }
+
+    public void setAmbiente(Ambiente ambiente) {
+        this.ambiente = ambiente;
+    }
+    
     public String getNome() {
         return this.nome;
     }

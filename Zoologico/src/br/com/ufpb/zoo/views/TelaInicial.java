@@ -8,14 +8,18 @@ package br.com.ufpb.zoo.views;
 import br.com.ufpb.zoo.control.SistemaZoo;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.IOException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author robson
  */
 public class TelaInicial extends javax.swing.JFrame {
-
+    
     private static SistemaZoo sistema;
 
     /**
@@ -24,7 +28,6 @@ public class TelaInicial extends javax.swing.JFrame {
     public TelaInicial(SistemaZoo sistema) {
         this.sistema = sistema;
         initComponents();
-
         URL url = this.getClass().getResource("./././././images/ZooIcone.png");
         Image ZooIcone = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(ZooIcone);
@@ -200,9 +203,14 @@ public class TelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCorredorSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCorredorSubBlocoActionPerformed
-        CadastrarCorredor cc = new CadastrarCorredor(this, rootPaneCheckingEnabled);
-        cc.setLocationRelativeTo(null);
-        cc.setVisible(true);
+        if (sistema.getAllBlocos().size() != 0) {
+            CadastrarCorredor cc = new CadastrarCorredor(sistema, this, rootPaneCheckingEnabled);
+            cc.setLocationRelativeTo(null);
+            cc.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum bloco cadastrado");
+        }
+        
     }//GEN-LAST:event_jCorredorSubBlocoActionPerformed
 
     private void jPesquisaLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPesquisaLocalActionPerformed
@@ -212,10 +220,13 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jPesquisaLocalActionPerformed
 
     private void jAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAnimalActionPerformed
-        // TODO add your handling code here:
-        CadastrarAnimal ca = new CadastrarAnimal(sistema, this, rootPaneCheckingEnabled);
-        ca.setLocationRelativeTo(null);
-        ca.setVisible(true);
+        if (sistema.getAllAmbientes().size() != 0) {
+            CadastrarAnimal ca = new CadastrarAnimal(sistema, this, rootPaneCheckingEnabled);
+            ca.setLocationRelativeTo(null);
+            ca.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum ambiente cadastrado! ");
+        }
     }//GEN-LAST:event_jAnimalActionPerformed
 
     private void jFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFuncionarioActionPerformed
@@ -226,13 +237,18 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jFuncionarioActionPerformed
 
     private void fBlocoSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fBlocoSubBlocoActionPerformed
-        CadastrarBloco cb = new CadastrarBloco(sistema,this, rootPaneCheckingEnabled);
-        cb.setLocationRelativeTo(null);
-        cb.setVisible(true);
+        if (sistema.getAllOfficials().size() != 0) {
+            CadastrarBloco cb = new CadastrarBloco(sistema, this, rootPaneCheckingEnabled);
+            cb.setLocationRelativeTo(null);
+            cb.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum funcionario cadastrado!");
+        }
+        
     }//GEN-LAST:event_fBlocoSubBlocoActionPerformed
 
     private void jAmbienteSubBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAmbienteSubBlocoActionPerformed
-        CadastrarAmbiente cam = new CadastrarAmbiente(this, rootPaneCheckingEnabled);
+        CadastrarAmbiente cam = new CadastrarAmbiente(sistema, this, rootPaneCheckingEnabled);
         cam.setLocationRelativeTo(null);
         cam.setVisible(true);
     }//GEN-LAST:event_jAmbienteSubBlocoActionPerformed
@@ -250,13 +266,18 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jPesquisaCorredorActionPerformed
 
     private void jVisaoGeralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jVisaoGeralMouseClicked
-       VisaoGeral tela = new VisaoGeral(sistema, this, rootPaneCheckingEnabled);
-       tela.setLocationRelativeTo(null);
-       tela.setVisible(true);
+        VisaoGeral tela = new VisaoGeral(sistema, this, rootPaneCheckingEnabled);
+        tela.setLocationRelativeTo(null);
+        tela.setVisible(true);
     }//GEN-LAST:event_jVisaoGeralMouseClicked
 
     private void sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sairMouseClicked
-       dispose();
+        try {
+            sistema.salvarNoArquivo();
+            dispose();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_sairMouseClicked
 
     /**
@@ -290,7 +311,7 @@ public class TelaInicial extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaInicial(sistema).setVisible(true);
-
+                
             }
         });
     }

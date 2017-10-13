@@ -8,6 +8,7 @@ package br.com.ufpb.zoo.control;
 import br.com.ufpb.zoo.exceptions.FuncionarioJaExistenteException;
 import br.com.ufpb.zoo.exceptions.FuncionarioNaoExisteException;
 import br.com.ufpb.zoo.gravador.Gravador;
+import br.com.ufpb.zoo.model.Animal;
 import br.com.ufpb.zoo.model.Funcionario;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,11 +31,11 @@ public class GerenteFuncionario {
     }
 
     public void cadastrarFuncionario(Funcionario f) throws FuncionarioJaExistenteException {
-        Funcionario fun = funcionarios.get(f.getEmail());
-        if (this.funcionarios.get(fun) != null) {
+        Funcionario fun = funcionarios.get(f.getNome());
+        if (fun != null) {
             throw new FuncionarioJaExistenteException("O funcionário informado já esta cadastrado!");
         } else {
-            funcionarios.put(f.getEmail(), f);
+            funcionarios.put(f.getNome(), f);
         }
     }
 
@@ -42,8 +43,8 @@ public class GerenteFuncionario {
         return new ArrayList(this.funcionarios.values());
     }
 
-    public Funcionario pesquisaFuncionario(String email) throws FuncionarioNaoExisteException {
-        Funcionario f = funcionarios.get(email);
+    public Funcionario pesquisaFuncionario(String nome) throws FuncionarioNaoExisteException {
+        Funcionario f = funcionarios.get(nome);
         if (f != null) {
             return f;
         } else {
@@ -63,8 +64,8 @@ public class GerenteFuncionario {
     public void salvarFuncionarios() throws IOException {
         this.gravador.gravar(new ArrayList(this.funcionarios.values()));
     }
-    public List<Funcionario> recuperarFuncionarios() throws IOException{
-        return this.gravador.ler();
+    public void recuperarFuncionarios() throws IOException{
+         for (Funcionario i : this.gravador.ler()) this.funcionarios.put(i.getNome(),i);
     }
         
 }

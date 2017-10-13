@@ -1,6 +1,13 @@
 package br.com.ufpb.zoo.model;
 
-public class Bloco {
+import java.io.Serializable;
+
+public class Bloco implements Serializable {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     private String nome;
     private Funcionario responsavel;

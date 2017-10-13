@@ -6,7 +6,13 @@
 package br.com.ufpb.zoo.run;
 
 import br.com.ufpb.zoo.control.SistemaZoo;
+import br.com.ufpb.zoo.exceptions.AmbienteJaExistenteException;
+import br.com.ufpb.zoo.model.Ambiente;
 import br.com.ufpb.zoo.views.TelaInicial;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,8 +24,14 @@ public class Projeto {
     
     public static void main(String[] args){
         SistemaZoo sistema = new SistemaZoo();
+        try {
+            sistema.recuperaDoArquivo();
+        } catch (IOException ex) {
+            Logger.getLogger(Projeto.class.getName()).log(Level.SEVERE, null, ex);
+        }
         TelaInicial tela = new TelaInicial(sistema);
         tela.setLocationRelativeTo(null);
         tela.setVisible(true);
+        
     }
 }

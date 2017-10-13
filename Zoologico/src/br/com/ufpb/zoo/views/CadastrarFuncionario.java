@@ -72,10 +72,6 @@ public class CadastrarFuncionario extends javax.swing.JDialog {
         jSeparator2 = new javax.swing.JSeparator();
         jFuncao = new javax.swing.JLabel();
         txtFuncao = new javax.swing.JTextField();
-        jBloco = new javax.swing.JLabel();
-        txtBloco = new javax.swing.JTextField();
-        jCorredor = new javax.swing.JLabel();
-        txtCorredor = new javax.swing.JTextField();
         jObservacoes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtObservacoes = new javax.swing.JTextArea();
@@ -147,7 +143,7 @@ public class CadastrarFuncionario extends javax.swing.JDialog {
 
         txtEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
         txtEstado.setToolTipText("");
-        txtEstado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtEstado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEstadoActionPerformed(evt);
@@ -155,10 +151,6 @@ public class CadastrarFuncionario extends javax.swing.JDialog {
         });
 
         jFuncao.setText("Função:");
-
-        jBloco.setText("Bloco:");
-
-        jCorredor.setText("Corredor:");
 
         jObservacoes.setText("Observações:");
 
@@ -171,7 +163,7 @@ public class CadastrarFuncionario extends javax.swing.JDialog {
         jScrollPane1.setViewportView(txtObservacoes);
 
         btnCadastrarFuncionario.setText("Cadastrar");
-        btnCadastrarFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrarFuncionario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarFuncionarioActionPerformed(evt);
@@ -184,6 +176,10 @@ public class CadastrarFuncionario extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator2)
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jCadastrarFuncionario)
+                .addGap(91, 91, 91))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -240,29 +236,15 @@ public class CadastrarFuncionario extends javax.swing.JDialog {
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jFuncao)
-                                    .addComponent(jBloco))
+                                .addComponent(jFuncao)
                                 .addGap(56, 56, 56)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFuncao)
-                                    .addComponent(txtBloco)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCorredor)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtCorredor))
+                                .addComponent(txtFuncao))
                             .addComponent(jObservacoes)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(btnCadastrarFuncionario)))
                 .addContainerGap(22, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jCadastrarFuncionario)
-                        .addGap(91, 91, 91))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnCadastrarFuncionario)
-                        .addGap(170, 170, 170))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,21 +297,13 @@ public class CadastrarFuncionario extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jFuncao)
                     .addComponent(txtFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBloco)
-                    .addComponent(txtBloco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCorredor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCorredor))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jObservacoes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnCadastrarFuncionario)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.getAccessibleContext().setAccessibleName("");
@@ -427,12 +401,10 @@ public class CadastrarFuncionario extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrarFuncionario;
-    private javax.swing.JLabel jBloco;
     private javax.swing.JLabel jCadastrarFuncionario;
     private javax.swing.JLabel jCep;
     private javax.swing.JLabel jCidade;
     private javax.swing.JLabel jComplemento;
-    private javax.swing.JLabel jCorredor;
     private javax.swing.JLabel jCpf;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jEmail;
@@ -449,11 +421,9 @@ public class CadastrarFuncionario extends javax.swing.JDialog {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel jTelefone;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField txtBloco;
     private javax.swing.JFormattedTextField txtCep;
     private javax.swing.JTextField txtCidade;
     private javax.swing.JTextField txtComplemento;
-    private javax.swing.JTextField txtCorredor;
     private javax.swing.JFormattedTextField txtCpf;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JComboBox<String> txtEstado;

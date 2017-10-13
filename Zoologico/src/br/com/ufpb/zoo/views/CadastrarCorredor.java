@@ -11,25 +11,35 @@ import java.awt.Toolkit;
 import java.net.URL;
 import javax.swing.JOptionPane;
 import br.com.ufpb.zoo.control.SistemaZoo;
+import br.com.ufpb.zoo.exceptions.BlocoNaoExistenteException;
+import br.com.ufpb.zoo.exceptions.CorredorJaExistenteException;
 
 /**
  *
  * @author Claudio Victor
  */
 public class CadastrarCorredor extends javax.swing.JDialog {
-    
-    SistemaZoo sisZoo = new SistemaZoo();
+
+    private static SistemaZoo sisZoo;
+
     /**
      * Creates new form CadastrarFuncionario
      */
-    public CadastrarCorredor(java.awt.Frame parent, boolean modal) {
+    public CadastrarCorredor(SistemaZoo sistema, java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+        this.sisZoo = sistema;
         URL url = this.getClass().getResource("images/ZooIcone.png");
         Image ZooIcone = Toolkit.getDefaultToolkit().getImage(url);
         this.setIconImage(ZooIcone);
         setIconImage(ZooIcone);
+        preencherCombo();
+    }
+
+    public void preencherCombo() {
+        for (int i = 0; i < this.sisZoo.getAllBlocos().size(); i++) {
+            comboBlocos.addItem(this.sisZoo.getAllBlocos().get(i).getNome());
+        }
     }
 
     /**
@@ -47,10 +57,10 @@ public class CadastrarCorredor extends javax.swing.JDialog {
         jCadastrarCorredor = new javax.swing.JLabel();
         jNome = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
-        jObservacoes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtObservacoes = new javax.swing.JTextArea();
         btnCadastrarCorredor = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        comboBlocos = new javax.swing.JComboBox<>();
 
         jTextField1.setText("jTextField1");
 
@@ -67,44 +77,42 @@ public class CadastrarCorredor extends javax.swing.JDialog {
         jNome.setLabelFor(txtNome);
         jNome.setText("Nome:");
 
-        jObservacoes.setText("Observações:");
-
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        txtObservacoes.setColumns(20);
-        txtObservacoes.setRows(5);
-        jScrollPane1.setViewportView(txtObservacoes);
-
         btnCadastrarCorredor.setText("Cadastrar");
-        btnCadastrarCorredor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrarCorredor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCadastrarCorredor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarCorredorActionPerformed(evt);
             }
         });
 
+        jLabel1.setText("Bloco:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(136, 136, 136)
-                            .addComponent(btnCadastrarCorredor)
-                            .addGap(126, 126, 126))
-                        .addComponent(jObservacoes))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jNome)
-                        .addGap(49, 49, 49)
+                        .addGap(160, 160, 160)
+                        .addComponent(btnCadastrarCorredor))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCadastrarCorredor)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jNome)
+                                    .addGap(49, 49, 49)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jCadastrarCorredor)
+                                        .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                                        .addComponent(comboBlocos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -116,9 +124,11 @@ public class CadastrarCorredor extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jNome))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jObservacoes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(comboBlocos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCadastrarCorredor)
@@ -131,11 +141,22 @@ public class CadastrarCorredor extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarCorredorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarCorredorActionPerformed
-        
+
         String nome = txtNome.getText();
-         
-        String obs = txtObservacoes.toString();
-       
+        Bloco b = null;
+        try {
+            b = sisZoo.pesquisaBloco(comboBlocos.getSelectedItem().toString());
+        } catch (BlocoNaoExistenteException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        Corredor c = new Corredor(nome, b);
+        try {
+            this.sisZoo.cadastrarCorredor(c);
+            dispose();
+        } catch (CorredorJaExistenteException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+
     }//GEN-LAST:event_btnCadastrarCorredorActionPerformed
 
     /**
@@ -171,7 +192,7 @@ public class CadastrarCorredor extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastrarCorredor dialog = new CadastrarCorredor(new javax.swing.JFrame(), true);
+                CadastrarCorredor dialog = new CadastrarCorredor(sisZoo, new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -185,14 +206,14 @@ public class CadastrarCorredor extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrarCorredor;
+    private javax.swing.JComboBox<String> comboBlocos;
     private javax.swing.JLabel jCadastrarCorredor;
     private javax.swing.JEditorPane jEditorPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jNome;
-    private javax.swing.JLabel jObservacoes;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextArea txtObservacoes;
     // End of variables declaration//GEN-END:variables
 }

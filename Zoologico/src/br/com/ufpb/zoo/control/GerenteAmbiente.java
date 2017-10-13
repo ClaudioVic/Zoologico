@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 package br.com.ufpb.zoo.control;
+
 import br.com.ufpb.zoo.model.Ambiente;
 import br.com.ufpb.zoo.gravador.Gravador;
 import br.com.ufpb.zoo.exceptions.*;
-import br.com.ufpb.zoo.control.GerenteAmbiente;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -15,51 +15,51 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
 
-
 /**
  *
  * @author Claudio Victor
  */
 public class GerenteAmbiente {
-    
-    private Map<String,Ambiente> ambientes;
-    private Gravador gravador;
-    
-    public GerenteAmbiente(){
-        this.ambientes = new HashMap();
+
+    private Map<String, Ambiente> ambientes;
+    private Gravador<Ambiente> gravador;
+
+    public GerenteAmbiente() {
+        this.ambientes = new HashMap<String, Ambiente>();
         this.gravador = new Gravador("ambientes.dat");
     }
-    
-    public void cadastrarAmbiente(Ambiente a) throws AmbienteJaExistenteException{
+
+    public void cadastrarAmbiente(Ambiente a) throws AmbienteJaExistenteException {
         Ambiente amb = this.ambientes.get(a.getNome() + a.getEspecie());
-        if(amb != null){
+        if (amb == null) {
+            this.ambientes.put(a.getNome() + a.getEspecie(), a);
+
+        } else {
             throw new AmbienteJaExistenteException("O Ambiente informado já está cadastrado!");
         }
-        else{
-            this.ambientes.put(a.getNome()+a.getEspecie(),a);
-        }
     }
-    
-    public List<Ambiente> getAllEnviroment(){
+
+    public List<Ambiente> getAllAmbientes() {
         return new ArrayList(this.ambientes.values());
     }
-    
-    public Ambiente pesquisaAmbiente(String nome,String especie)throws AmbienteNaoExisteException{
-        Ambiente amb = this.ambientes.get(nome+especie);
-        if(amb != null){
+
+    public Ambiente pesquisaAmbiente(String nome, String especie) throws AmbienteNaoExisteException {
+        Ambiente amb = this.ambientes.get(nome + especie);
+        if (amb != null) {
             return amb;
-        }else{
+        } else {
             throw new AmbienteNaoExisteException("O Ambiente informado não está cadastrado!");
         }
     }
-    
-     // Arquivos
-    
+
+    // Arquivos
     public void salvarAmbiente() throws IOException {
-        this.gravador.gravar( new ArrayList(this.ambientes.values()));
+        this.gravador.gravar(new ArrayList(this.ambientes.values()));
     }
-    
-    public List<Ambiente> recuperarAmbientes() throws IOException{
-        return this.gravador.ler();
+
+    public void recuperarAmbientes() throws IOException {
+        for (Ambiente i : this.gravador.ler()) {
+            this.ambientes.put(i.getNome() + i.getEspecie(), i);
+        }
     }
 }
