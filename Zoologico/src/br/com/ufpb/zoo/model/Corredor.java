@@ -17,7 +17,9 @@ public class Corredor {
 	public Corredor(){
 		this("");
 	}
-	
+	public String getNome(){
+            return this.nome;
+        }
 	public String getNumero(){
 		return this.nome;
 	}

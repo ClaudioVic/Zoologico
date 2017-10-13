@@ -1,6 +1,7 @@
 package br.com.ufpb.zoo.model;
 
 public class Ambiente {
+    private String nome;
 	private int QTD_MAX_ANIMAIS;
 	private String especie;
 	
@@ -8,7 +9,9 @@ public class Ambiente {
 		QTD_MAX_ANIMAIS = qTD_MAX_ANIMAIS;
 		this.especie = especie;
 	}
-	
+	public String getNome(){
+            return this.nome;
+        }
 	public int getQTD_MAX_ANIMAIS() {
 		return QTD_MAX_ANIMAIS;
 	}
