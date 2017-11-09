@@ -61,6 +61,15 @@ public class GerenteAnimal {
             throw new AnimalNaoExisteException("O animal informado não foi encontrado!");
         }
     }
+    public List<Animal> pesquisaAnimaisDeUmBloco(String bloco){
+        List<Animal>lista = new ArrayList<Animal>();
+        for (Animal animal:this.getAllAnimais()){
+            if (animal.getAmbiente().getCorredor().getBloco().getNome().equals(bloco)){
+                lista.add(animal);
+            }
+        }
+        return lista;
+    }
     // Arquivos
     public void salvarAnimais() throws IOException {
         this.gravador.gravar(new ArrayList(this.animais.values()));

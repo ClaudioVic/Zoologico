@@ -61,7 +61,9 @@ public class SistemaZoo {
     public void deletarAnimal(Animal m) throws AnimalNaoExisteException {
         this.gerenteAnimal.deletarAnimal(m);
     }
-
+    public List<Animal> pesquisaAnimaisDeUmBloco(String bloco){
+        return this.gerenteAnimal.pesquisaAnimaisDeUmBloco(bloco);
+    }
     /**
      * Modulo Funcionario
      *

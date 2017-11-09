@@ -259,7 +259,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jAmbienteSubBlocoActionPerformed
 
     private void jPesquisaBlocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPesquisaBlocoActionPerformed
-        PesquisarAnimaisDoBloco pab = new PesquisarAnimaisDoBloco(this, rootPaneCheckingEnabled);
+        PesquisarAnimaisDoBloco pab = new PesquisarAnimaisDoBloco(sistema,this, rootPaneCheckingEnabled);
         pab.setLocationRelativeTo(null);
         pab.setVisible(true);
     }//GEN-LAST:event_jPesquisaBlocoActionPerformed
