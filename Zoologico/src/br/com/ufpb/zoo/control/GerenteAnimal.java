@@ -70,6 +70,15 @@ public class GerenteAnimal {
         }
         return lista;
     }
+    public List<Animal> pesquisaAnimaisDeUmCorredor(String corredor){
+        List<Animal>lista = new ArrayList<Animal>();
+        for (Animal animal:this.getAllAnimais()){
+            if (animal.getAmbiente().getCorredor().getNome().equals(corredor)){
+                lista.add(animal);
+            }
+        }
+        return lista;
+    }
     // Arquivos
     public void salvarAnimais() throws IOException {
         this.gravador.gravar(new ArrayList(this.animais.values()));

@@ -55,7 +55,6 @@ public class TelaInicial extends javax.swing.JFrame {
         jAmbienteSubBloco = new javax.swing.JMenuItem();
         JPesquisa = new javax.swing.JMenu();
         jPesquisaAnimal = new javax.swing.JMenu();
-        jPesquisaLocal = new javax.swing.JMenuItem();
         jPesquisaBloco = new javax.swing.JMenuItem();
         jPesquisaCorredor = new javax.swing.JMenuItem();
         jVisaoGeral = new javax.swing.JMenu();
@@ -134,16 +133,6 @@ public class TelaInicial extends javax.swing.JFrame {
         jPesquisaAnimal.setText("Animal");
         jPesquisaAnimal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jPesquisaLocal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jPesquisaLocal.setText("Local de um animal");
-        jPesquisaLocal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPesquisaLocal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPesquisaLocalActionPerformed(evt);
-            }
-        });
-        jPesquisaAnimal.add(jPesquisaLocal);
-
         jPesquisaBloco.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jPesquisaBloco.setText("Animais do bloco");
         jPesquisaBloco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -213,12 +202,6 @@ public class TelaInicial extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jCorredorSubBlocoActionPerformed
 
-    private void jPesquisaLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPesquisaLocalActionPerformed
-        PesquisarLocalDeUmAnimal pla = new PesquisarLocalDeUmAnimal(this, rootPaneCheckingEnabled);
-        pla.setLocationRelativeTo(null);
-        pla.setVisible(true);
-    }//GEN-LAST:event_jPesquisaLocalActionPerformed
-
     private void jAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAnimalActionPerformed
         if (sistema.getAllAmbientes().size() != 0) {
             CadastrarAnimal ca = new CadastrarAnimal(sistema, this, rootPaneCheckingEnabled);
@@ -265,7 +248,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jPesquisaBlocoActionPerformed
 
     private void jPesquisaCorredorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPesquisaCorredorActionPerformed
-        PesquisarAnimaisDoCorredor pac = new PesquisarAnimaisDoCorredor(this, rootPaneCheckingEnabled);
+        PesquisarAnimaisDoCorredor pac = new PesquisarAnimaisDoCorredor(sistema,this, rootPaneCheckingEnabled);
         pac.setLocationRelativeTo(null);
         pac.setVisible(true);
     }//GEN-LAST:event_jPesquisaCorredorActionPerformed
@@ -336,7 +319,6 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenu jPesquisaAnimal;
     private javax.swing.JMenuItem jPesquisaBloco;
     private javax.swing.JMenuItem jPesquisaCorredor;
-    private javax.swing.JMenuItem jPesquisaLocal;
     private javax.swing.JMenu jVisaoGeral;
     private javax.swing.JMenu sair;
     // End of variables declaration//GEN-END:variables

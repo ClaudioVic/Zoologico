@@ -64,6 +64,9 @@ public class SistemaZoo {
     public List<Animal> pesquisaAnimaisDeUmBloco(String bloco){
         return this.gerenteAnimal.pesquisaAnimaisDeUmBloco(bloco);
     }
+     public List<Animal> pesquisaAnimaisDeUmCorredor(String corredor){
+         return this.gerenteAnimal.pesquisaAnimaisDeUmCorredor(corredor);
+     }
     /**
      * Modulo Funcionario
      *
